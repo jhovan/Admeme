@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class ImageManager {
-    func saveImage(imageName: String, image: UIImage) {
+    
+    static func saveImage(imageName: String, image: UIImage) {
 
 
      guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
@@ -40,7 +41,7 @@ class ImageManager {
 
 
 
-    func loadImageFromDiskWith(fileName: String) -> UIImage? {
+    static func loadImageFromDiskWith(fileName: String) -> UIImage? {
 
       let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
 
