@@ -15,6 +15,7 @@
 		0E0CFF6C23F65C3F000CC14C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E0CFF6A23F65C3F000CC14C /* LaunchScreen.storyboard */; };
 		0E0CFF7723F65C3F000CC14C /* AdmemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CFF7623F65C3F000CC14C /* AdmemeTests.swift */; };
 		0E0CFF8223F65C3F000CC14C /* AdmemeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CFF8123F65C3F000CC14C /* AdmemeUITests.swift */; };
+		0E0CFF9123F67E72000CC14C /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CFF9023F67E72000CC14C /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0E0CFF7D23F65C3F000CC14C /* AdmemeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdmemeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E0CFF8123F65C3F000CC14C /* AdmemeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmemeUITests.swift; sourceTree = "<group>"; };
 		0E0CFF8323F65C3F000CC14C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E0CFF9023F67E72000CC14C /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		0E0CFF5E23F65C3E000CC14C /* Admeme */ = {
 			isa = PBXGroup;
 			children = (
+				0E0CFF8F23F67DA6000CC14C /* Util */,
 				0E0CFF5F23F65C3E000CC14C /* AppDelegate.swift */,
 				0E0CFF6123F65C3E000CC14C /* SceneDelegate.swift */,
 				0E0CFF6323F65C3E000CC14C /* ViewController.swift */,
@@ -126,6 +129,14 @@
 				0E0CFF8323F65C3F000CC14C /* Info.plist */,
 			);
 			path = AdmemeUITests;
+			sourceTree = "<group>";
+		};
+		0E0CFF8F23F67DA6000CC14C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0E0CFF9023F67E72000CC14C /* ImageManager.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				0E0CFF6423F65C3E000CC14C /* ViewController.swift in Sources */,
 				0E0CFF6023F65C3E000CC14C /* AppDelegate.swift in Sources */,
 				0E0CFF6223F65C3E000CC14C /* SceneDelegate.swift in Sources */,
+				0E0CFF9123F67E72000CC14C /* ImageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
