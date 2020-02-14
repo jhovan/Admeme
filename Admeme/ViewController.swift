@@ -10,10 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var testImageBox: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ImageManager.saveImage(imageName: "perro.jpg", image: UIImage(named: "perro")!)
         ImageManager.saveImage(imageName: "gato.jpg", image: UIImage(named: "gato")!)
+        
+        testImageBox.image = ImageManager.loadImageFromDiskWith(fileName:"gato.jpg")
     }
 
 
