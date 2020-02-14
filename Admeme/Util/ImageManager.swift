@@ -14,7 +14,7 @@ class ImageManager {
     static func saveImage(imageName: String, image: UIImage) {
 
 
-     guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
 
         let fileName = imageName
         let fileURL = documentsDirectory.appendingPathComponent(fileName)
@@ -42,9 +42,7 @@ class ImageManager {
 
 
     static func loadImageFromDiskWith(fileName: String) -> UIImage? {
-
-      let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
-
+        let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
         let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
 

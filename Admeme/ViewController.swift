@@ -12,7 +12,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        ImageManager.saveImage(imageName: "perro.jpg", image: UIImage(named: "perro")!)
+        ImageManager.saveImage(imageName: "gato.jpg", image: UIImage(named: "gato")!)
     }
 
 
