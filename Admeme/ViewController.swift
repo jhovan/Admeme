@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         ImageManager.saveImage(imageName: "perro.jpg", image: UIImage(named: "perro")!)
         ImageManager.saveImage(imageName: "gato.jpg", image: UIImage(named: "gato")!)
         
-        testImageBox.image = ImageManager.loadImageFromDiskWith(fileName:"gato.jpg")
     }
 
 
