@@ -10,8 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var openPhotos: UIBarButtonItem!
     
-    @IBOutlet weak var testImageBox: UIImageView!
+    @IBOutlet weak var imageCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

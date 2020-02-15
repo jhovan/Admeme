@@ -64,5 +64,7 @@
 	<true/>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Admeme wants to use Photos</string>
 </dict>
 </plist>
