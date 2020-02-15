@@ -12,8 +12,9 @@ private let reuseIdentifier = "ImageCell"
 
 
 
-class ImageCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ImageCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UICollectionViewDelegateFlowLayout {
     
+    let cellsByRow: CGFloat = 3
     var cellItems: [CellModel] = []
     var imagePicker: UIImagePickerController?
 
@@ -81,8 +82,7 @@ class ImageCollectionViewController: UICollectionViewController, UIImagePickerCo
     func collectionView(_ collectionView: UICollectionView,
            layout collectionViewLayout: UICollectionViewLayout,
            sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let dimension = (self.view.frame.size.width)/5
+        let dimension = (self.view.frame.size.width - 3 * (self.cellsByRow - 1))/self.cellsByRow
         return CGSize(width: dimension, height: dimension)
         
     }
@@ -90,13 +90,13 @@ class ImageCollectionViewController: UICollectionViewController, UIImagePickerCo
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 3.0
     }
 
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 3.0
     }
 
 

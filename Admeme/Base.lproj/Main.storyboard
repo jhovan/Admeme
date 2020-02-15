@@ -16,31 +16,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="338-pQ-0TL">
-                            <size key="itemSize" width="80" height="80"/>
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="K4x-Gg-fqI" customClass="ImageCollectionViewCell" customModule="Admeme" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o3D-hX-FqZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nlf-hE-yyl">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P7t-fg-bwn">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="P7t-fg-bwn" secondAttribute="trailing" id="AU4-9O-4Sc"/>
-                                        <constraint firstItem="P7t-fg-bwn" firstAttribute="leading" secondItem="o3D-hX-FqZ" secondAttribute="leading" id="SuC-Xy-A6b"/>
-                                        <constraint firstItem="P7t-fg-bwn" firstAttribute="top" secondItem="o3D-hX-FqZ" secondAttribute="top" id="k9b-Id-KZa"/>
+                                        <constraint firstItem="P7t-fg-bwn" firstAttribute="leading" secondItem="nlf-hE-yyl" secondAttribute="leading" id="SuC-Xy-A6b"/>
+                                        <constraint firstItem="P7t-fg-bwn" firstAttribute="top" secondItem="nlf-hE-yyl" secondAttribute="top" id="k9b-Id-KZa"/>
                                         <constraint firstAttribute="bottom" secondItem="P7t-fg-bwn" secondAttribute="bottom" id="u0r-Mv-xzt"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="80" height="80"/>
                                 <connections>
                                     <outlet property="imageView" destination="P7t-fg-bwn" id="WiC-R2-PiL"/>
                                 </connections>
