@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import Photos
 
 private let reuseIdentifier = "ImageCell"
-
 
 
 class ImageCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UICollectionViewDelegateFlowLayout {
@@ -29,6 +29,12 @@ class ImageCollectionViewController: UICollectionViewController, UIImagePickerCo
 
         // Do any additional setup after loading the view.
         
+        let urls = ImageManager.getAllFilesUrls()
+        
+        for url in urls {
+            cellItems.append(CellModel(image: UIImage(contentsOfFile: url.path)!))
+        }
+        
         self.imagePicker = UIImagePickerController()
         self.imagePicker?.sourceType = .photoLibrary
         self.imagePicker?.delegate = self
@@ -40,6 +46,24 @@ class ImageCollectionViewController: UICollectionViewController, UIImagePickerCo
         let model = CellModel(image: image)
         self.cellItems.append(model)
         self.collectionView.reloadData()
+        
+        // Se almacena en Documents
+        ImageManager.saveImage(imageName: String(cellItems.count + 1), image: image)
+        
+        // Borramos la foto de la galeria
+        let status = PHPhotoLibrary.authorizationStatus()
+    
+        if status == .authorized {
+            let imageAsset:PHAsset = info[UIImagePickerController.InfoKey.phAsset] as! PHAsset
+            let enumeration: NSArray = [imageAsset]
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetChangeRequest.deleteAssets(enumeration)
+            }, completionHandler: {success, error in
+                print(success ? "Success" : error! )
+            })
+        }
+        
+
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -133,6 +157,7 @@ class ImageCollectionViewController: UICollectionViewController, UIImagePickerCo
     */
     
     @IBAction func openPhotos(_ sender: Any) {
+        PHPhotoLibrary.requestAuthorization({_ in})
         self.present(self.imagePicker!, animated: true, completion: nil)
     }
     

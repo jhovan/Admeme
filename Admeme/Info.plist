@@ -65,6 +65,6 @@
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Admeme wants to use Photos</string>
+	<string>Si lo permites, Admeme borrara las fotos que transfieras automaticamente de tu galeria.</string>
 </dict>
 </plist>

@@ -39,13 +39,12 @@ class ImageManager {
 
     }
 
-
-
+    
     static func loadImageFromDiskWith(fileName: String) -> UIImage? {
         let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
         let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
-
+        
         if let dirPath = paths.first {
             let imageUrl = URL(fileURLWithPath: dirPath).appendingPathComponent(fileName)
             let image = UIImage(contentsOfFile: imageUrl.path)
@@ -54,5 +53,22 @@ class ImageManager {
         }
 
         return nil
+    }
+    
+    static func getAllFilesUrls() -> [URL] {
+        let fileManager = FileManager.default
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        do {
+            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
+            return fileURLs
+        } catch {
+            print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
+            return []
+        }
+
+    }
+    
+    static func loadImageFromDiskWith(imageUrl: URL) -> UIImage? {
+            return UIImage(contentsOfFile: imageUrl.path)
     }
 }
