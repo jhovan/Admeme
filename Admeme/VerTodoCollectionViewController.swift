@@ -12,7 +12,7 @@ import Photos
 private let reuseIdentifier = "ImageCell"
 
 
-class ImageCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UICollectionViewDelegateFlowLayout {
+class VerTodoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UICollectionViewDelegateFlowLayout {
     
     let cellsByRow: CGFloat = 3
     var cellItems: [CellModel] = []

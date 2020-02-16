@@ -19,7 +19,7 @@
 		0E4B706A23F788CA0098CC12 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4B706823F788CA0098CC12 /* MainInterface.storyboard */; };
 		0E4B706E23F788CA0098CC12 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0E4B706423F788CA0098CC12 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0E4B707623F7E49B0098CC12 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */; };
-		0E4B707823F7E8E20098CC12 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707723F7E8E20098CC12 /* ImageCollectionViewController.swift */; };
+		0E4B707823F7E8E20098CC12 /* VerTodoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,7 @@
 		0E4B706923F788CA0098CC12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		0E4B706B23F788CA0098CC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		0E4B707723F7E8E20098CC12 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
+		0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerTodoCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +144,7 @@
 				0E0CFF5F23F65C3E000CC14C /* AppDelegate.swift */,
 				0E0CFF6123F65C3E000CC14C /* SceneDelegate.swift */,
 				0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */,
-				0E4B707723F7E8E20098CC12 /* ImageCollectionViewController.swift */,
+				0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */,
 				0E0CFF6523F65C3E000CC14C /* Main.storyboard */,
 				0E0CFF6823F65C3F000CC14C /* Assets.xcassets */,
 				0E0CFF6A23F65C3F000CC14C /* LaunchScreen.storyboard */,
@@ -351,7 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E4B707823F7E8E20098CC12 /* ImageCollectionViewController.swift in Sources */,
+				0E4B707823F7E8E20098CC12 /* VerTodoCollectionViewController.swift in Sources */,
 				0E4B707623F7E49B0098CC12 /* ImageCollectionViewCell.swift in Sources */,
 				0E0CFF6023F65C3E000CC14C /* AppDelegate.swift in Sources */,
 				0E0CFF6223F65C3E000CC14C /* SceneDelegate.swift in Sources */,
