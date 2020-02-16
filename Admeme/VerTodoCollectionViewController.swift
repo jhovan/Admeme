@@ -48,7 +48,7 @@ class VerTodoCollectionViewController: UICollectionViewController, UIImagePicker
         self.collectionView.reloadData()
         
         // Se almacena en Documents
-        ImageManager.saveImage(imageName: String(cellItems.count + 1), image: image)
+        ImageManager.saveImage(imageName: String("\(cellItems.count).jpg"), image: image)
         
         // Borramos la foto de la galeria
         let status = PHPhotoLibrary.authorizationStatus()
