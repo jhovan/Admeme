@@ -15,7 +15,7 @@ private let reuseIdentifier = "ImageCell"
 class VerTodoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UICollectionViewDelegateFlowLayout {
     
     let cellsByRow: CGFloat = 3
-    var cellItems: [CellModel] = []
+    var cellItems: [FileModel] = []
     var imagePicker: UIImagePickerController?
 
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class VerTodoCollectionViewController: UICollectionViewController, UIImagePicker
         let urls = ImageManager.getAllFilesUrls()
         
         for url in urls {
-            cellItems.append(CellModel(image: UIImage(contentsOfFile: url.path)!))
+            cellItems.append(FileModel(image: UIImage(contentsOfFile: url.path)!))
         }
         
         self.imagePicker = UIImagePickerController()
@@ -43,7 +43,7 @@ class VerTodoCollectionViewController: UICollectionViewController, UIImagePicker
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        let model = CellModel(image: image)
+        let model = FileModel(image: image)
         self.cellItems.append(model)
         self.collectionView.reloadData()
         

@@ -8,6 +8,6 @@
 
 import UIKit
 
-struct CellModel {
+struct FileModel {
     var image: UIImage
 }

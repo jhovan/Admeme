@@ -13,7 +13,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
     
-    var item: CellModel? {
+    var item: FileModel? {
         didSet {
             self.configure(item)
         }
@@ -23,7 +23,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func configure(_ item: CellModel?) {
+    func configure(_ item: FileModel?) {
         if let model = item {
             self.imageView.image = model.image
         }
