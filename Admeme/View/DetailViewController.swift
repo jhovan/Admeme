@@ -10,13 +10,28 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var fileURL: URL?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.imageView.image = UIImage(contentsOfFile: fileURL!.path)
     }
     
-
+    
+    @IBAction func shareButton(_ sender: Any) {
+    }
+    
+    
+    @IBAction func starButton(_ sender: Any) {
+    }
+    
+    
+    @IBAction func removeButton(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
