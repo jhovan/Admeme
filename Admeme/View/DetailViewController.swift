@@ -12,15 +12,25 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var starButton: UIButton!
+    
     var cellIndex: Int?
     var verTodoView: VerTodoCollectionViewController?
-    var fileURL: URL?
+    var filePath: String?
+    var favourites: [String: Any]? = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let favourites =  UserDefaults.standard.dictionary(forKey: Constants.FAVORITES_KEY) {
+            self.favourites = favourites
+        }
 
-        self.fileURL = self.verTodoView!.cellItems[cellIndex!]
-        self.imageView.image = UIImage(contentsOfFile: self.fileURL!.path)
+        self.filePath = self.verTodoView!.cellItems[cellIndex!]
+        if ((self.favourites?.keys.contains(filePath!))!) {
+            starButton.setImage(UIImage(systemName:"star.fill"), for: .normal)
+        }
+        self.imageView.image = UIImage(contentsOfFile: self.filePath!)
     }
     
     
@@ -29,11 +39,22 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func starButton(_ sender: Any) {
+        if ((self.favourites?.keys.contains(filePath!))!) {
+            self.favourites?.removeValue(forKey: filePath!)
+            UserDefaults.standard.set(self.favourites, forKey: Constants.FAVORITES_KEY)
+            starButton.setImage(UIImage(systemName:"star"), for: .normal)
+        }
+        else {
+            self.favourites?.updateValue(1, forKey: filePath!)
+            UserDefaults.standard.set(self.favourites, forKey: Constants.FAVORITES_KEY)
+            starButton.setImage(UIImage(systemName:"star.fill"), for: .normal)
+        }
+
     }
     
     
     @IBAction func removeButton(_ sender: Any) {
-        ImageManager.removeImage(fileURL: self.fileURL!)
+        ImageManager.removeImage(filePath: self.filePath!)
         self.verTodoView?.cellItems.remove(at: cellIndex!)
         dismiss(animated: true, completion: nil)
     }

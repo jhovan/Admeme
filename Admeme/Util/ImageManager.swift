@@ -54,17 +54,22 @@ class ImageManager {
     }
     
     static func removeImage(fileURL: URL) {
-        if FileManager.default.fileExists(atPath: fileURL.path) {
+        self.removeImage(filePath: fileURL.path)
+        
+    }
+    
+    static func removeImage(filePath: String) {
+        if FileManager.default.fileExists(atPath: filePath) {
             do {
-                try FileManager.default.removeItem(atPath: fileURL.path)
+                try FileManager.default.removeItem(atPath: filePath)
                 print("Removed old image")
             } catch let removeError {
                 print("couldn't remove file at path", removeError)
             }
 
         }
-        
     }
+    
     
     static func getAllFilesUrls() -> [URL] {
         let fileManager = FileManager.default

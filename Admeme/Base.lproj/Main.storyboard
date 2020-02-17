@@ -138,6 +138,7 @@
                     <navigationItem key="navigationItem" id="S8g-HE-Q4a"/>
                     <connections>
                         <outlet property="imageView" destination="Wvq-fd-p8a" id="aN8-TZ-nKi"/>
+                        <outlet property="starButton" destination="Cnv-eF-mxS" id="ozc-I6-8OW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRo-70-fhe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
