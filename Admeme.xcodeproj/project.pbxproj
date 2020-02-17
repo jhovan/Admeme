@@ -22,6 +22,7 @@
 		0E4B707823F7E8E20098CC12 /* VerTodoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */; };
 		0E4B707B23FA811F0098CC12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707A23FA811F0098CC12 /* DetailViewController.swift */; };
 		0E4B708123FB49FD0098CC12 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708023FB49FD0098CC12 /* Constants.swift */; };
+		0E4B708323FB5A940098CC12 /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708223FB5A940098CC12 /* FavoritesCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerTodoCollectionViewController.swift; sourceTree = "<group>"; };
 		0E4B707A23FA811F0098CC12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0E4B708023FB49FD0098CC12 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0E4B708223FB5A940098CC12 /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				0E4B707A23FA811F0098CC12 /* DetailViewController.swift */,
 				0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */,
 				0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */,
+				0E4B708223FB5A940098CC12 /* FavoritesCollectionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E4B708323FB5A940098CC12 /* FavoritesCollectionViewController.swift in Sources */,
 				0E4B707823F7E8E20098CC12 /* VerTodoCollectionViewController.swift in Sources */,
 				0E4B707623F7E49B0098CC12 /* ImageCollectionViewCell.swift in Sources */,
 				0E0CFF6023F65C3E000CC14C /* AppDelegate.swift in Sources */,

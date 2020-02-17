@@ -64,6 +64,55 @@
             </objects>
             <point key="canvasLocation" x="4355.625" y="807.04225352112678"/>
         </scene>
+        <!--Tus Favoritos-->
+        <scene sceneID="Tcy-XB-4PH">
+            <objects>
+                <collectionViewController id="gVP-S0-h9G" customClass="FavoritesCollectionViewController" customModule="Admeme" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="G25-gQ-kTx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="f97-2V-GjO">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="83G-HH-n6M" customClass="ImageCollectionViewCell" customModule="Admeme" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3LJ-RE-VT1">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zg6-J0-UB5">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="zg6-J0-UB5" secondAttribute="trailing" id="Da6-ii-5OU"/>
+                                        <constraint firstItem="zg6-J0-UB5" firstAttribute="leading" secondItem="3LJ-RE-VT1" secondAttribute="leading" id="GBy-52-tox"/>
+                                        <constraint firstItem="zg6-J0-UB5" firstAttribute="top" secondItem="3LJ-RE-VT1" secondAttribute="top" id="haq-8V-WKE"/>
+                                        <constraint firstAttribute="bottom" secondItem="zg6-J0-UB5" secondAttribute="bottom" id="jv1-Bm-s3R"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageView" destination="zg6-J0-UB5" id="HZk-7D-04z"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="gVP-S0-h9G" id="6FS-zP-5Uy"/>
+                            <outlet property="delegate" destination="gVP-S0-h9G" id="tIK-UF-8P1"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Tus Favoritos" id="xrR-dV-34w"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="llP-sf-oJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4356" y="1610"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="gir-8H-YVv">
             <objects>
@@ -156,6 +205,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="nQD-ZM-yPt" kind="relationship" relationship="viewControllers" id="ahI-f6-r6Z"/>
+                        <segue destination="ra1-Fz-ZLF" kind="relationship" relationship="viewControllers" id="pr3-YF-tff"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8m-O3-bZN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -166,7 +216,7 @@
         <scene sceneID="z8y-C2-ICu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nQD-ZM-yPt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Ver todo" image="photo.fill.on.rectangle.fill" catalog="system" id="1Dd-Ax-c24"/>
+                    <tabBarItem key="tabBarItem" title="Ver todo" image="photo.fill.on.rectangle.fill" selectedImage="photo.fill.on.rectangle.fill" catalog="system" id="1Dd-Ax-c24"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8BE-FE-eyY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -181,11 +231,32 @@
             </objects>
             <point key="canvasLocation" x="3358.125" y="807.04225352112678"/>
         </scene>
+        <!--Favoritos-->
+        <scene sceneID="uBp-Xj-sBC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ra1-Fz-ZLF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="star" catalog="system" selectedImage="star.fill" id="p26-r1-s05"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wdr-et-Wrm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gVP-S0-h9G" kind="relationship" relationship="rootViewController" id="OlS-MH-Zqp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6e-E9-5sN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3358" y="1610"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="photo.fill.on.rectangle.fill" width="64" height="48"/>
         <image name="photo.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
         <image name="star" catalog="system" width="64" height="58"/>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
 </document>
