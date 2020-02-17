@@ -39,6 +39,10 @@ class VerTodoCollectionViewController: UICollectionViewController, UIImagePicker
         self.imagePicker?.sourceType = .photoLibrary
         self.imagePicker?.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.collectionView.reloadData()
+    }
 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -75,15 +79,6 @@ class VerTodoCollectionViewController: UICollectionViewController, UIImagePicker
     }
     
  
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailViewSegue" {
-            let viewController: DetailViewController = segue.destination as! DetailViewController
-            let indexPath: IndexPath = self.collectionView.indexPathsForSelectedItems![0]
-            viewController.fileURL = self.cellItems[indexPath.row]
-        }
-    }
-    
     
     // MARK: UICollectionViewDataSource
 
@@ -123,6 +118,17 @@ class VerTodoCollectionViewController: UICollectionViewController, UIImagePicker
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 3.0
     }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailViewSegue" {
+            let viewController: DetailViewController = segue.destination as! DetailViewController
+            let indexPath: IndexPath = self.collectionView.indexPathsForSelectedItems![0]
+            viewController.cellIndex = indexPath.row
+            viewController.verTodoView = self
+        }
+    }
+    
 
 
 

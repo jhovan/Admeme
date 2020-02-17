@@ -12,12 +12,15 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     
+    var cellIndex: Int?
+    var verTodoView: VerTodoCollectionViewController?
     var fileURL: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.imageView.image = UIImage(contentsOfFile: fileURL!.path)
+        self.fileURL = self.verTodoView!.cellItems[cellIndex!]
+        self.imageView.image = UIImage(contentsOfFile: self.fileURL!.path)
     }
     
     
@@ -30,16 +33,11 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func removeButton(_ sender: Any) {
+        ImageManager.removeImage(fileURL: self.fileURL!)
+        self.verTodoView?.cellItems.remove(at: cellIndex!)
+        dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
