@@ -48,27 +48,35 @@ class VerTodoCollectionViewController: UICollectionViewController, UIImagePicker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
-        // Se almacena en Documents
-        let url = ImageManager.saveImage(imageName: String("\(cellItems.count).jpg"), image: image)
         
-        if let url = url {
-            self.cellItems.append(url)
-        }
-        self.collectionView.reloadData()
+        // Se almacena en Documents
+        var url: URL?
+            
         
         // Borramos la foto de la galeria
         let status = PHPhotoLibrary.authorizationStatus()
     
         if status == .authorized {
+            
             let imageAsset:PHAsset = info[UIImagePickerController.InfoKey.phAsset] as! PHAsset
             let enumeration: NSArray = [imageAsset]
+            
+            url = ImageManager.saveImage(imageName: imageAsset.value(forKey: "filename") as! String, image: image)
+            
             PHPhotoLibrary.shared().performChanges({
                 PHAssetChangeRequest.deleteAssets(enumeration)
             }, completionHandler: {success, error in
-                print(success ? "Success" : error! )
+                print(success ? "Success" :  "Error" )
             })
         }
+        else {
+            url = ImageManager.saveImage(imageName: String("\(cellItems.count).jpg"), image: image)
+        }
         
+        if let url = url {
+            self.cellItems.append(url)
+        }
+        self.collectionView.reloadData()
 
         picker.dismiss(animated: true, completion: nil)
     }

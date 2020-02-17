@@ -113,6 +113,9 @@
                                 <rect key="frame" x="290" y="0.0" width="30" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="X"/>
+                                <connections>
+                                    <action selector="closeButton:" destination="7gU-Xx-E3B" eventType="touchUpInside" id="Tc3-rP-Rdy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
