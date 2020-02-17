@@ -20,6 +20,8 @@
 		0E4B706E23F788CA0098CC12 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0E4B706423F788CA0098CC12 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0E4B707623F7E49B0098CC12 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */; };
 		0E4B707823F7E8E20098CC12 /* VerTodoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */; };
+		0E4B707B23FA811F0098CC12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707A23FA811F0098CC12 /* DetailViewController.swift */; };
+		0E4B707F23FA817A0098CC12 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707E23FA817A0098CC12 /* CellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		0E4B706B23F788CA0098CC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerTodoCollectionViewController.swift; sourceTree = "<group>"; };
+		0E4B707A23FA811F0098CC12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0E4B707E23FA817A0098CC12 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,11 +144,11 @@
 		0E0CFF5E23F65C3E000CC14C /* Admeme */ = {
 			isa = PBXGroup;
 			children = (
+				0E4B707D23FA814D0098CC12 /* Model */,
+				0E4B707C23FA812F0098CC12 /* View */,
 				0E0CFF8F23F67DA6000CC14C /* Util */,
 				0E0CFF5F23F65C3E000CC14C /* AppDelegate.swift */,
 				0E0CFF6123F65C3E000CC14C /* SceneDelegate.swift */,
-				0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */,
-				0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */,
 				0E0CFF6523F65C3E000CC14C /* Main.storyboard */,
 				0E0CFF6823F65C3F000CC14C /* Assets.xcassets */,
 				0E0CFF6A23F65C3F000CC14C /* LaunchScreen.storyboard */,
@@ -187,6 +191,24 @@
 				0E4B706B23F788CA0098CC12 /* Info.plist */,
 			);
 			path = ShareExtension;
+			sourceTree = "<group>";
+		};
+		0E4B707C23FA812F0098CC12 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E4B707A23FA811F0098CC12 /* DetailViewController.swift */,
+				0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */,
+				0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E4B707D23FA814D0098CC12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E4B707E23FA817A0098CC12 /* CellModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +376,8 @@
 				0E4B707823F7E8E20098CC12 /* VerTodoCollectionViewController.swift in Sources */,
 				0E4B707623F7E49B0098CC12 /* ImageCollectionViewCell.swift in Sources */,
 				0E0CFF6023F65C3E000CC14C /* AppDelegate.swift in Sources */,
+				0E4B707B23FA811F0098CC12 /* DetailViewController.swift in Sources */,
+				0E4B707F23FA817A0098CC12 /* CellModel.swift in Sources */,
 				0E0CFF6223F65C3E000CC14C /* SceneDelegate.swift in Sources */,
 				0E0CFF9123F67E72000CC14C /* ImageManager.swift in Sources */,
 			);

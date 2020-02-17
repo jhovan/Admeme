@@ -8,10 +8,6 @@
 
 import UIKit
 
-struct CellModel {
-    var image: UIImage
-}
-
 class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
