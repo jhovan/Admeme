@@ -11,32 +11,25 @@ import UIKit
 
 class ImageManager {
     
-    static func saveImage(imageName: String, image: UIImage) {
+    static func saveImage(imageName: String, image: UIImage) -> URL?{
 
 
-        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil}
 
         let fileName = imageName
         let fileURL = documentsDirectory.appendingPathComponent(fileName)
-        guard let data = image.jpegData(compressionQuality: 1) else { return }
+        guard let data = image.jpegData(compressionQuality: 1) else { return nil}
 
-        //Checks if file exists, removes it if so.
-        if FileManager.default.fileExists(atPath: fileURL.path) {
-            do {
-                try FileManager.default.removeItem(atPath: fileURL.path)
-                print("Removed old image")
-            } catch let removeError {
-                print("couldn't remove file at path", removeError)
-            }
-
-        }
+        removeImage(fileURL: fileURL)
 
         do {
             try data.write(to: fileURL)
+            return fileURL
         } catch let error {
             print("error saving file with error", error)
         }
-
+        
+        return nil
     }
 
     
@@ -53,6 +46,19 @@ class ImageManager {
         }
 
         return nil
+    }
+    
+    static func removeImage(fileURL: URL) {
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                try FileManager.default.removeItem(atPath: fileURL.path)
+                print("Removed old image")
+            } catch let removeError {
+                print("couldn't remove file at path", removeError)
+            }
+
+        }
+        
     }
     
     static func getAllFilesUrls() -> [URL] {
