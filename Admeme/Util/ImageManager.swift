@@ -16,11 +16,16 @@ class ImageManager {
 
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil}
 
-        let fileName = imageName
-        let fileURL = documentsDirectory.appendingPathComponent(fileName)
-        guard let data = image.jpegData(compressionQuality: 1) else { return nil}
+        var fileName = imageName
+        var fileURL = documentsDirectory.appendingPathComponent(fileName)
 
-        removeImage(fileURL: fileURL)
+        while FileManager.default.fileExists(atPath: fileURL.path) {
+            fileName = fileName.replacingOccurrences(of: ".", with: "(1).")
+            print(fileName)
+            fileURL = documentsDirectory.appendingPathComponent(fileName)
+        }
+
+        guard let data = image.jpegData(compressionQuality: 1) else { return nil}
 
         do {
             try data.write(to: fileURL)
