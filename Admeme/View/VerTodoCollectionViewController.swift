@@ -15,7 +15,7 @@ private let reuseIdentifier = "ImageCell"
 class VerTodoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UICollectionViewDelegateFlowLayout {
     
     let cellsByRow: CGFloat = 3
-    var cellItems: [FileModel] = []
+    var cellItems: [URL] = []
     var imagePicker: UIImagePickerController?
 
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class VerTodoCollectionViewController: UICollectionViewController, UIImagePicker
         let urls = ImageManager.getAllFilesUrls()
         
         for url in urls {
-            cellItems.append(FileModel(image: UIImage(contentsOfFile: url.path)!))
+            cellItems.append(url)
         }
         
         self.imagePicker = UIImagePickerController()
@@ -43,12 +43,14 @@ class VerTodoCollectionViewController: UICollectionViewController, UIImagePicker
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        let model = FileModel(image: image)
-        self.cellItems.append(model)
-        self.collectionView.reloadData()
         
         // Se almacena en Documents
-        ImageManager.saveImage(imageName: String("\(cellItems.count).jpg"), image: image)
+        let url = ImageManager.saveImage(imageName: String("\(cellItems.count).jpg"), image: image)
+        
+        if let url = url {
+            self.cellItems.append(url)
+        }
+        self.collectionView.reloadData()
         
         // Borramos la foto de la galeria
         let status = PHPhotoLibrary.authorizationStatus()
@@ -97,9 +99,7 @@ class VerTodoCollectionViewController: UICollectionViewController, UIImagePicker
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
-        cell.item = self.cellItems[indexPath.row]
-        // Configure the cell
-    
+        cell.fileURL = self.cellItems[indexPath.row]    
         return cell
     }
     

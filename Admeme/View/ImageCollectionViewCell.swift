@@ -13,9 +13,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
     
-    var item: FileModel? {
+    var fileURL: URL? {
         didSet {
-            self.configure(item)
+            self.configure(fileURL)
         }
     }
     
@@ -23,9 +23,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func configure(_ item: FileModel?) {
-        if let model = item {
-            self.imageView.image = model.image
+    func configure(_ fileURL: URL?) {
+        if let fileURL = fileURL {
+            self.imageView.image = UIImage(contentsOfFile: fileURL.path)!
         }
     }
     
