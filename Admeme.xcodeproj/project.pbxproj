@@ -27,6 +27,7 @@
 		0E4B708823FBD0150098CC12 /* ImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */; };
 		0E4B708923FBD0870098CC12 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */; };
 		0E4B708F23FBD3E10098CC12 /* ImageGridWithSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708E23FBD3E10098CC12 /* ImageGridWithSegue.swift */; };
+		0E4B709023FBE23D0098CC12 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708023FB49FD0098CC12 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -424,6 +425,7 @@
 				0E4B708923FBD0870098CC12 /* ImageCollectionViewCell.swift in Sources */,
 				0E4B706723F788CA0098CC12 /* ShareViewController.swift in Sources */,
 				0E4B708823FBD0150098CC12 /* ImageGrid.swift in Sources */,
+				0E4B709023FBE23D0098CC12 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

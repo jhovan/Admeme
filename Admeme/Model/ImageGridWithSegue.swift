@@ -10,7 +10,19 @@ import UIKit
 
 
 class ImageGridWithSegue: ImageGrid {
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    var cellItems: [String] = []
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       return self.cellItems.count
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
+       cell.filePath = self.cellItems[indexPath.row]
+       return cell
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if segue.identifier == "detailViewSegue" {
            let viewController: DetailViewController = segue.destination as! DetailViewController

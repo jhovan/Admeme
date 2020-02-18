@@ -10,10 +10,10 @@ import UIKit
 
 class ImageGrid: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    private let reuseIdentifier = "ImageCell"
+    let reuseIdentifier = "ImageCell"
 
     let cellsByRow: CGFloat = 3
-    var cellItems: [String] = []
+
     
     override func viewWillAppear(_ animated: Bool) {
        self.collectionView.reloadData()
@@ -23,21 +23,9 @@ class ImageGrid: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-       // #warning Incomplete implementation, return the number of sections
        return 1
     }
 
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       // #warning Incomplete implementation, return the number of items
-       return self.cellItems.count
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
-       cell.filePath = self.cellItems[indexPath.row]
-       return cell
-    }
 
     func collectionView(_ collectionView: UICollectionView,
           layout collectionViewLayout: UICollectionViewLayout,
