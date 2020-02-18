@@ -17,17 +17,17 @@ class DetailViewController: UIViewController {
     var cellIndex: Int?
     var imageGridView: ImageGrid?
     var filePath: String?
-    var favourites: [String: Any]? = [:]
+    var favorites: [String: Any]? = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let favourites =  UserDefaults.standard.dictionary(forKey: Constants.FAVORITES_KEY) {
-            self.favourites = favourites
+        if let favorites =  UserDefaults.standard.dictionary(forKey: Constants.FAVORITES_KEY) {
+            self.favorites = favorites
         }
 
         self.filePath = self.imageGridView!.cellItems[cellIndex!]
-        if ((self.favourites?.keys.contains(filePath!))!) {
+        if ((self.favorites?.keys.contains(filePath!))!) {
             starButton.setImage(UIImage(systemName:"star.fill"), for: .normal)
         }
         self.imageView.image = UIImage(contentsOfFile: self.filePath!)
@@ -39,14 +39,14 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func starButton(_ sender: Any) {
-        if ((self.favourites?.keys.contains(filePath!))!) {
-            self.favourites?.removeValue(forKey: filePath!)
-            UserDefaults.standard.set(self.favourites, forKey: Constants.FAVORITES_KEY)
+        if ((self.favorites?.keys.contains(filePath!))!) {
+            self.favorites?.removeValue(forKey: filePath!)
+            UserDefaults.standard.set(self.favorites, forKey: Constants.FAVORITES_KEY)
             starButton.setImage(UIImage(systemName:"star"), for: .normal)
         }
         else {
-            self.favourites?.updateValue(1, forKey: filePath!)
-            UserDefaults.standard.set(self.favourites, forKey: Constants.FAVORITES_KEY)
+            self.favorites?.updateValue(1, forKey: filePath!)
+            UserDefaults.standard.set(self.favorites, forKey: Constants.FAVORITES_KEY)
             starButton.setImage(UIImage(systemName:"star.fill"), for: .normal)
         }
 
