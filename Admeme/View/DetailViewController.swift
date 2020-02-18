@@ -56,6 +56,10 @@ class DetailViewController: UIViewController {
     @IBAction func removeButton(_ sender: Any) {
         ImageManager.removeImage(filePath: self.filePath!)
         self.imageGridView?.cellItems.remove(at: cellIndex!)
+        if ((self.favorites?.keys.contains(filePath!))!) {
+            self.favorites?.removeValue(forKey: filePath!)
+            UserDefaults.standard.set(self.favorites, forKey: Constants.FAVORITES_KEY)
+        }
         dismiss(animated: true, completion: nil)
     }
     

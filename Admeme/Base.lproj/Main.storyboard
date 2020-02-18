@@ -99,6 +99,7 @@
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="imageView" destination="zg6-J0-UB5" id="HZk-7D-04z"/>
+                                    <segue destination="7gU-Xx-E3B" kind="presentation" identifier="detailViewSegue" modalPresentationStyle="fullScreen" id="7n7-dp-rUh"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -192,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRo-70-fhe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5128.125" y="807.04225352112678"/>
+            <point key="canvasLocation" x="5181" y="807"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="63o-4O-3vK">
@@ -200,6 +201,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7W5-e2-BpJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h5A-QH-W9y">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -216,7 +218,7 @@
         <scene sceneID="z8y-C2-ICu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nQD-ZM-yPt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Ver todo" image="photo.fill.on.rectangle.fill" selectedImage="photo.fill.on.rectangle.fill" catalog="system" id="1Dd-Ax-c24"/>
+                    <tabBarItem key="tabBarItem" title="Ver todo" image="photo.fill.on.rectangle.fill" catalog="system" selectedImage="photo.fill.on.rectangle.fill" id="1Dd-Ax-c24"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8BE-FE-eyY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -235,7 +237,7 @@
         <scene sceneID="uBp-Xj-sBC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ra1-Fz-ZLF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favoritos" image="star" catalog="system" selectedImage="star.fill" id="p26-r1-s05"/>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="star.fill" catalog="system" selectedImage="star.fill" id="p26-r1-s05"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wdr-et-Wrm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -252,11 +254,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="photo.fill.on.rectangle.fill" width="64" height="48"/>
         <image name="photo.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
         <image name="star" catalog="system" width="64" height="58"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7n7-dp-rUh"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -202,8 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				0E4B707A23FA811F0098CC12 /* DetailViewController.swift */,
-				0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */,
 				0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */,
+				0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */,
 				0E4B708223FB5A940098CC12 /* FavoritesCollectionViewController.swift */,
 			);
 			path = View;

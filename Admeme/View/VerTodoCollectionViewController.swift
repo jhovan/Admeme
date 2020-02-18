@@ -25,11 +25,6 @@ class VerTodoCollectionViewController: ImageGrid, UIImagePickerControllerDelegat
 
         // Do any additional setup after loading the view.
         
-        let urls = ImageManager.getAllFilesUrls()
-        
-        for url in urls {
-            cellItems.append(url.path)
-        }
         
         self.imagePicker = UIImagePickerController()
         self.imagePicker?.sourceType = .photoLibrary
@@ -37,7 +32,13 @@ class VerTodoCollectionViewController: ImageGrid, UIImagePickerControllerDelegat
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.collectionView.reloadData()
+        let urls = ImageManager.getAllFilesUrls()
+        
+        self.cellItems = []
+        for url in urls {
+            self.cellItems.append(url.path)
+        }
+        super.viewWillAppear(animated)
     }
 
     

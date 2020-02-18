@@ -22,13 +22,15 @@ class FavoritesCollectionViewController: ImageGrid {
 
         // Do any additional setup after loading the view.
 
-        let urls = ImageManager.getAllFilesUrls()
-
-        for url in urls {
-            self.cellItems.append(url.path)
-        }
        
     }
        
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let favorites =  UserDefaults.standard.dictionary(forKey: Constants.FAVORITES_KEY) {
+            self.cellItems = Array(favorites.keys)
+        }
+        super.viewWillAppear(animated)
+    }
 
 }
