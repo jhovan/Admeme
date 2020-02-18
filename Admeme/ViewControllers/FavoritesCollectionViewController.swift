@@ -9,7 +9,7 @@
 import UIKit
 
 
-class FavoritesCollectionViewController: ImageGrid {
+class FavoritesCollectionViewController: ImageGridWithSegue {
 
     override func viewDidLoad() {
         super.viewDidLoad()

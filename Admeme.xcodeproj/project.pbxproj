@@ -24,6 +24,9 @@
 		0E4B708123FB49FD0098CC12 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708023FB49FD0098CC12 /* Constants.swift */; };
 		0E4B708323FB5A940098CC12 /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708223FB5A940098CC12 /* FavoritesCollectionViewController.swift */; };
 		0E4B708523FB5CFE0098CC12 /* ImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */; };
+		0E4B708823FBD0150098CC12 /* ImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */; };
+		0E4B708923FBD0870098CC12 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */; };
+		0E4B708F23FBD3E10098CC12 /* ImageGridWithSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708E23FBD3E10098CC12 /* ImageGridWithSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,9 @@
 		0E4B708023FB49FD0098CC12 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0E4B708223FB5A940098CC12 /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
 		0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGrid.swift; sourceTree = "<group>"; };
+		0E4B708623FBCD920098CC12 /* Admeme.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Admeme.entitlements; sourceTree = "<group>"; };
+		0E4B708723FBCED10098CC12 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
+		0E4B708E23FBD3E10098CC12 /* ImageGridWithSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridWithSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +154,9 @@
 		0E0CFF5E23F65C3E000CC14C /* Admeme */ = {
 			isa = PBXGroup;
 			children = (
+				0E4B708623FBCD920098CC12 /* Admeme.entitlements */,
 				0E4B707D23FA814D0098CC12 /* Model */,
-				0E4B707C23FA812F0098CC12 /* View */,
+				0E4B707C23FA812F0098CC12 /* ViewControllers */,
 				0E0CFF8F23F67DA6000CC14C /* Util */,
 				0E0CFF5F23F65C3E000CC14C /* AppDelegate.swift */,
 				0E0CFF6123F65C3E000CC14C /* SceneDelegate.swift */,
@@ -191,6 +198,7 @@
 		0E4B706523F788CA0098CC12 /* ShareExtension */ = {
 			isa = PBXGroup;
 			children = (
+				0E4B708723FBCED10098CC12 /* ShareExtension.entitlements */,
 				0E4B706623F788CA0098CC12 /* ShareViewController.swift */,
 				0E4B706823F788CA0098CC12 /* MainInterface.storyboard */,
 				0E4B706B23F788CA0098CC12 /* Info.plist */,
@@ -198,21 +206,22 @@
 			path = ShareExtension;
 			sourceTree = "<group>";
 		};
-		0E4B707C23FA812F0098CC12 /* View */ = {
+		0E4B707C23FA812F0098CC12 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				0E4B707A23FA811F0098CC12 /* DetailViewController.swift */,
-				0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */,
 				0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */,
 				0E4B708223FB5A940098CC12 /* FavoritesCollectionViewController.swift */,
 			);
-			path = View;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		0E4B707D23FA814D0098CC12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */,
+				0E4B708E23FBD3E10098CC12 /* ImageGridWithSegue.swift */,
+				0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -382,6 +391,7 @@
 				0E4B708323FB5A940098CC12 /* FavoritesCollectionViewController.swift in Sources */,
 				0E4B707823F7E8E20098CC12 /* VerTodoCollectionViewController.swift in Sources */,
 				0E4B707623F7E49B0098CC12 /* ImageCollectionViewCell.swift in Sources */,
+				0E4B708F23FBD3E10098CC12 /* ImageGridWithSegue.swift in Sources */,
 				0E0CFF6023F65C3E000CC14C /* AppDelegate.swift in Sources */,
 				0E4B707B23FA811F0098CC12 /* DetailViewController.swift in Sources */,
 				0E4B708123FB49FD0098CC12 /* Constants.swift in Sources */,
@@ -411,7 +421,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E4B708923FBD0870098CC12 /* ImageCollectionViewCell.swift in Sources */,
 				0E4B706723F788CA0098CC12 /* ShareViewController.swift in Sources */,
+				0E4B708823FBD0150098CC12 /* ImageGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +594,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Admeme/Admeme.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z27ZTUPSJC;
 				INFOPLIST_FILE = Admeme/Info.plist;
@@ -601,6 +614,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Admeme/Admeme.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z27ZTUPSJC;
 				INFOPLIST_FILE = Admeme/Info.plist;
@@ -702,6 +716,7 @@
 		0E4B707023F788CA0098CC12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z27ZTUPSJC;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
@@ -721,6 +736,7 @@
 		0E4B707123F788CA0098CC12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z27ZTUPSJC;
 				INFOPLIST_FILE = ShareExtension/Info.plist;

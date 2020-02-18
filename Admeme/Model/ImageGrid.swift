@@ -59,14 +59,5 @@ class ImageGrid: UICollectionViewController, UICollectionViewDelegateFlowLayout 
        return 3.0
     }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       if segue.identifier == "detailViewSegue" {
-           let viewController: DetailViewController = segue.destination as! DetailViewController
-           let indexPath: IndexPath = self.collectionView.indexPathsForSelectedItems![0]
-           viewController.cellIndex = indexPath.row
-           viewController.imageGridView = self
-       }
-    }
 
 }

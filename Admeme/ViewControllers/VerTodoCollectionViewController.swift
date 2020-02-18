@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 
-class VerTodoCollectionViewController: ImageGrid, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class VerTodoCollectionViewController: ImageGridWithSegue, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var imagePicker: UIImagePickerController?
 
