@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Share View Controller-->
+        <!--Admeme-->
         <scene sceneID="6aJ-LS-rQm">
             <objects>
                 <collectionViewController id="7MX-0A-eIg" customClass="ShareViewController" customModule="ShareExtension" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,13 +50,13 @@
                             <outlet property="delegate" destination="7MX-0A-eIg" id="Jr4-2q-ukH"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="dkm-Yd-xPm">
+                    <navigationItem key="navigationItem" title="Admeme" id="dkm-Yd-xPm">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="gI6-8C-Tob">
                             <connections>
                                 <action selector="cancelButton:" destination="7MX-0A-eIg" id="9dp-HL-yhd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Agregar" id="tz4-2y-erN">
+                        <barButtonItem key="rightBarButtonItem" title="Importar" id="tz4-2y-erN">
                             <connections>
                                 <action selector="addButton:" destination="7MX-0A-eIg" id="fjL-if-FV8"/>
                             </connections>
