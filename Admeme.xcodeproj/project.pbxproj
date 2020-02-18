@@ -23,6 +23,7 @@
 		0E4B707B23FA811F0098CC12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707A23FA811F0098CC12 /* DetailViewController.swift */; };
 		0E4B708123FB49FD0098CC12 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708023FB49FD0098CC12 /* Constants.swift */; };
 		0E4B708323FB5A940098CC12 /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708223FB5A940098CC12 /* FavoritesCollectionViewController.swift */; };
+		0E4B708523FB5CFE0098CC12 /* ImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		0E4B707A23FA811F0098CC12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0E4B708023FB49FD0098CC12 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0E4B708223FB5A940098CC12 /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
+		0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 		0E4B707D23FA814D0098CC12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				0E0CFF6023F65C3E000CC14C /* AppDelegate.swift in Sources */,
 				0E4B707B23FA811F0098CC12 /* DetailViewController.swift in Sources */,
 				0E4B708123FB49FD0098CC12 /* Constants.swift in Sources */,
+				0E4B708523FB5CFE0098CC12 /* ImageGrid.swift in Sources */,
 				0E0CFF6223F65C3E000CC14C /* SceneDelegate.swift in Sources */,
 				0E0CFF9123F67E72000CC14C /* ImageManager.swift in Sources */,
 			);

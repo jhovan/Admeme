@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var starButton: UIButton!
     
     var cellIndex: Int?
-    var verTodoView: VerTodoCollectionViewController?
+    var imageGridView: ImageGrid?
     var filePath: String?
     var favourites: [String: Any]? = [:]
     
@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
             self.favourites = favourites
         }
 
-        self.filePath = self.verTodoView!.cellItems[cellIndex!]
+        self.filePath = self.imageGridView!.cellItems[cellIndex!]
         if ((self.favourites?.keys.contains(filePath!))!) {
             starButton.setImage(UIImage(systemName:"star.fill"), for: .normal)
         }
@@ -55,7 +55,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func removeButton(_ sender: Any) {
         ImageManager.removeImage(filePath: self.filePath!)
-        self.verTodoView?.cellItems.remove(at: cellIndex!)
+        self.imageGridView?.cellItems.remove(at: cellIndex!)
         dismiss(animated: true, completion: nil)
     }
     
