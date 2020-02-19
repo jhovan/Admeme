@@ -35,6 +35,9 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func shareButton(_ sender: Any) {
+        let items = [UIImage(contentsOfFile: self.filePath!)]
+        let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
+        present(ac, animated: true)
     }
     
     

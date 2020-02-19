@@ -86,7 +86,6 @@ class ImageManager {
         if FileManager.default.fileExists(atPath: filePath) {
             do {
                 try FileManager.default.removeItem(atPath: filePath)
-                print("Removed old image")
             } catch let removeError {
                 print("couldn't remove file at path", removeError)
             }
