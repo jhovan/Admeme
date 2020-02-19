@@ -39,13 +39,14 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func starButton(_ sender: Any) {
-        if ((self.favorites?.keys.contains(filePath!))!) {
-            self.favorites?.removeValue(forKey: filePath!)
+        let fileName =  URL(fileURLWithPath: filePath!).lastPathComponent
+        if ((self.favorites?.keys.contains(fileName))!) {
+            self.favorites?.removeValue(forKey: fileName)
             UserDefaults.standard.set(self.favorites, forKey: Constants.FAVORITES_KEY)
             starButton.setImage(UIImage(systemName:"star"), for: .normal)
         }
         else {
-            self.favorites?.updateValue(1, forKey: filePath!)
+            self.favorites?.updateValue(1, forKey: fileName)
             UserDefaults.standard.set(self.favorites, forKey: Constants.FAVORITES_KEY)
             starButton.setImage(UIImage(systemName:"star.fill"), for: .normal)
         }
@@ -54,10 +55,11 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func removeButton(_ sender: Any) {
+        let fileName =  URL(fileURLWithPath: filePath!).lastPathComponent
         ImageManager.removeImage(filePath: self.filePath!)
         self.imageGridView?.cellItems.remove(at: cellIndex!)
         if ((self.favorites?.keys.contains(filePath!))!) {
-            self.favorites?.removeValue(forKey: filePath!)
+            self.favorites?.removeValue(forKey: fileName)
             UserDefaults.standard.set(self.favorites, forKey: Constants.FAVORITES_KEY)
         }
         dismiss(animated: true, completion: nil)
