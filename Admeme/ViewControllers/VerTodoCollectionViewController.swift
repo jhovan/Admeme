@@ -25,6 +25,7 @@ class VerTodoCollectionViewController: ImageGridWithSegue, UIImagePickerControll
 
         // Do any additional setup after loading the view.
         
+        
         NotificationCenter.default.addObserver(
         self,
         selector:#selector(updateFromDocuments),
@@ -49,7 +50,6 @@ class VerTodoCollectionViewController: ImageGridWithSegue, UIImagePickerControll
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         // load files from documents
         let urls = ImageManager.getAllFilesUrls()
         self.cellItems = []
