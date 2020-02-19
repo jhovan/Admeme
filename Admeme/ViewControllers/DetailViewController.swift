@@ -61,7 +61,7 @@ class DetailViewController: UIViewController {
         let fileName =  URL(fileURLWithPath: filePath!).lastPathComponent
         ImageManager.removeImage(filePath: self.filePath!)
         self.imageGridView?.cellItems.remove(at: cellIndex!)
-        if ((self.favorites?.keys.contains(filePath!))!) {
+        if ((self.favorites?.keys.contains(fileName))!) {
             self.favorites?.removeValue(forKey: fileName)
             UserDefaults.standard.set(self.favorites, forKey: Constants.FAVORITES_KEY)
         }
