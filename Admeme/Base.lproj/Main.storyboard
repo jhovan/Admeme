@@ -173,9 +173,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wvq-fd-p8a">
-                                <rect key="frame" x="0.0" y="35" width="320" height="467"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNL-qe-Y70">
                                 <rect key="frame" x="16" y="518" width="30" height="30"/>
                                 <constraints>
@@ -218,33 +215,38 @@
                                     <action selector="closeButton:" destination="7gU-Xx-E3B" eventType="touchUpInside" id="Tc3-rP-Rdy"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AR7-t2-B9F" customClass="ImageZoomView" customModule="Admeme" customModuleProvider="target">
+                                <rect key="frame" x="40" y="67" width="240" height="374"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Khi-58-W8C"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="4VH-yw-kS9"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pNL-qe-Y70" firstAttribute="leading" secondItem="nlF-q0-TYL" secondAttribute="leading" constant="16" id="0qd-gE-gma"/>
-                            <constraint firstItem="Wvq-fd-p8a" firstAttribute="top" secondItem="nlF-q0-TYL" secondAttribute="top" constant="35" id="5z2-na-mys"/>
-                            <constraint firstItem="pNL-qe-Y70" firstAttribute="top" secondItem="Wvq-fd-p8a" secondAttribute="bottom" constant="16" id="FxX-yT-qls"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="trailing" secondItem="Der-pP-hga" secondAttribute="trailing" constant="16" id="IQ0-X8-iJc"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="bottom" secondItem="pNL-qe-Y70" secondAttribute="bottom" constant="20" id="JPL-Yd-rDL"/>
-                            <constraint firstItem="Wvq-fd-p8a" firstAttribute="leading" secondItem="nlF-q0-TYL" secondAttribute="leading" id="Jvu-mX-VCd"/>
                             <constraint firstItem="Cnv-eF-mxS" firstAttribute="centerX" secondItem="nlF-q0-TYL" secondAttribute="centerX" id="T9d-4y-ThT"/>
-                            <constraint firstItem="nlF-q0-TYL" firstAttribute="trailing" secondItem="Wvq-fd-p8a" secondAttribute="trailing" id="evH-oW-4rM"/>
+                            <constraint firstItem="AR7-t2-B9F" firstAttribute="leading" secondItem="nlF-q0-TYL" secondAttribute="leading" id="WKE-fz-JTm"/>
+                            <constraint firstItem="AR7-t2-B9F" firstAttribute="top" secondItem="nlF-q0-TYL" secondAttribute="top" constant="35" id="cHM-b9-Sgg"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="bottom" secondItem="Cnv-eF-mxS" secondAttribute="bottom" constant="20" id="gxF-L3-Uin"/>
                             <constraint firstItem="B3u-58-8dA" firstAttribute="trailing" secondItem="nlF-q0-TYL" secondAttribute="trailing" id="jTr-6w-sPN"/>
+                            <constraint firstItem="Cnv-eF-mxS" firstAttribute="top" secondItem="AR7-t2-B9F" secondAttribute="bottom" constant="16" id="k8N-Iy-AKI"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="bottom" secondItem="Der-pP-hga" secondAttribute="bottom" constant="20" id="lb6-4C-gbl"/>
+                            <constraint firstItem="nlF-q0-TYL" firstAttribute="trailing" secondItem="AR7-t2-B9F" secondAttribute="trailing" id="oZv-3b-odh"/>
                             <constraint firstItem="B3u-58-8dA" firstAttribute="top" secondItem="nlF-q0-TYL" secondAttribute="top" id="vP1-2X-YMI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nlF-q0-TYL"/>
                     </view>
                     <navigationItem key="navigationItem" id="S8g-HE-Q4a"/>
                     <connections>
-                        <outlet property="imageView" destination="Wvq-fd-p8a" id="aN8-TZ-nKi"/>
+                        <outlet property="scrollView" destination="AR7-t2-B9F" id="rwZ-BU-K5t"/>
                         <outlet property="starButton" destination="Cnv-eF-mxS" id="ozc-I6-8OW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRo-70-fhe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5181" y="807"/>
+            <point key="canvasLocation" x="5180.625" y="805.9859154929577"/>
         </scene>
         <!--Custom Tab View Controller-->
         <scene sceneID="63o-4O-3vK">

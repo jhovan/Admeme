@@ -10,7 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
+
+    @IBOutlet weak var scrollView: ImageZoomView!
     
     @IBOutlet weak var starButton: UIButton!
     
@@ -31,7 +32,7 @@ class DetailViewController: UIViewController {
         if ((self.favorites?.keys.contains(self.fileName!))!) {
             starButton.setImage(UIImage(systemName:"star.fill"), for: .normal)
         }
-        self.imageView.image = UIImage(contentsOfFile: self.filePath!)
+        self.scrollView.setup(image: UIImage(contentsOfFile: self.filePath!))
     }
     
     
