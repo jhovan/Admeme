@@ -14,10 +14,16 @@ class ImageGridWithSegue: ImageGrid {
     var cellItems: [String] = []
     var selectFlag: Bool = false
     
+    @IBOutlet weak var selectButton: UIBarButtonItem!
+    
     @IBAction func selectButton(_ sender: Any) {
         self.selectFlag = !self.selectFlag
         self.tabBarController?.tabBar.isHidden = self.selectFlag
         self.navigationController?.isToolbarHidden = !self.selectFlag
+        self.collectionView.allowsSelection = false
+        self.collectionView.allowsSelection = true
+        self.collectionView.allowsMultipleSelection = self.selectFlag
+        selectButton.title = self.selectFlag ? "Cancelar" : "Seleccionar"
     }
     
     @IBAction func shareButton(_ sender: Any) {
@@ -25,6 +31,8 @@ class ImageGridWithSegue: ImageGrid {
     
     @IBAction func removeButton(_ sender: Any) {
     }
+    
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        return self.cellItems.count
@@ -43,6 +51,7 @@ class ImageGridWithSegue: ImageGrid {
        cell.filePath = self.cellItems[indexPath.row]
        return cell
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if segue.identifier == "detailViewSegue" {

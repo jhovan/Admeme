@@ -29,4 +29,15 @@ class ImageCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override var isSelected: Bool {
+        didSet {
+            if self.isSelected {
+                self.imageView.alpha = 0.3
+            }
+            else {
+                self.imageView.alpha = 1
+            }
+        }
+    }
+    
 }
