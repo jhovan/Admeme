@@ -11,7 +11,7 @@
         <!--Admeme-->
         <scene sceneID="Ssr-SI-L9o">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" id="5v7-hU-go5" customClass="VerTodoCollectionViewController" customModule="Admeme" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController hidesBottomBarWhenPushed="YES" id="5v7-hU-go5" customClass="VerTodoCollectionViewController" customModule="Admeme" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hoX-M1-V4d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="removeButton" destination="vB3-a1-28i" id="O9b-AU-Wsm"/>
                         <outlet property="selectButton" destination="KC3-zt-UKP" id="lW4-eN-pOT"/>
+                        <outlet property="shareButton" destination="345-Qu-WFe" id="T8r-7d-EGy"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fps-Gr-zPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -154,7 +156,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="removeButton" destination="hEZ-B9-tEi" id="BX2-Zn-0gl"/>
                         <outlet property="selectButton" destination="diQ-Vd-isc" id="3Gl-3G-fL8"/>
+                        <outlet property="shareButton" destination="Aqx-te-AEf" id="oed-OL-sLt"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llP-sf-oJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -264,7 +268,7 @@
         <!--Ver todo-->
         <scene sceneID="z8y-C2-ICu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nQD-ZM-yPt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nQD-ZM-yPt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Ver todo" image="photo.fill.on.rectangle.fill" catalog="system" selectedImage="photo.fill.on.rectangle.fill" id="1Dd-Ax-c24"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8BE-FE-eyY">
@@ -272,10 +276,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d3n-Oh-16a">
-                        <rect key="frame" x="0.0" y="470" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="5v7-hU-go5" kind="relationship" relationship="rootViewController" id="yua-p4-clV"/>
                     </connections>

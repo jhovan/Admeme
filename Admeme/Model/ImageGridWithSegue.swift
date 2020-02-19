@@ -16,7 +16,17 @@ class ImageGridWithSegue: ImageGrid {
     
     @IBOutlet weak var selectButton: UIBarButtonItem!
     
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    
+    @IBOutlet weak var removeButton: UIBarButtonItem!
+    
     @IBAction func selectButton(_ sender: Any) {
+        changeSelectOption()
+    }
+    
+    func changeSelectOption() {
+        self.shareButton.isEnabled = false
+        self.removeButton.isEnabled = false
         self.selectFlag = !self.selectFlag
         self.tabBarController?.tabBar.isHidden = self.selectFlag
         self.navigationController?.isToolbarHidden = !self.selectFlag
@@ -27,12 +37,33 @@ class ImageGridWithSegue: ImageGrid {
     }
     
     @IBAction func shareButton(_ sender: Any) {
+        let indexPaths = self.collectionView.indexPathsForSelectedItems
+        var images: [UIImage] = []
+        for indexPath in indexPaths! {
+            images.append(UIImage(contentsOfFile: self.cellItems[indexPath.row])!)
+        }
+        let ac = UIActivityViewController(activityItems: images as [Any], applicationActivities: nil)
+        present(ac, animated: true)
+        changeSelectOption()
     }
     
     @IBAction func removeButton(_ sender: Any) {
     }
     
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if self.collectionView.indexPathsForSelectedItems?.count ?? 0 > 0 {
+            self.shareButton.isEnabled = true
+            self.removeButton.isEnabled = true
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if self.collectionView.indexPathsForSelectedItems?.count ?? 0 == 0 {
+            self.shareButton.isEnabled = false
+            self.removeButton.isEnabled = false
+        }
+    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        return self.cellItems.count
