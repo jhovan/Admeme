@@ -11,7 +11,7 @@
         <!--Admeme-->
         <scene sceneID="Ssr-SI-L9o">
             <objects>
-                <collectionViewController id="5v7-hU-go5" customClass="VerTodoCollectionViewController" customModule="Admeme" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" id="5v7-hU-go5" customClass="VerTodoCollectionViewController" customModule="Admeme" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hoX-M1-V4d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,13 +52,32 @@
                             <outlet property="delegate" destination="5v7-hU-go5" id="gRU-Jl-euR"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems>
+                        <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="345-Qu-WFe">
+                            <connections>
+                                <action selector="shareButton:" destination="5v7-hU-go5" id="oGG-U6-3c1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="FwG-KX-XyY"/>
+                        <barButtonItem title="Item" image="trash" catalog="system" id="vB3-a1-28i">
+                            <connections>
+                                <action selector="removeButton:" destination="5v7-hU-go5" id="bXx-Jx-vfI"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Admeme" id="9eR-oS-FJp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BwJ-We-o8N">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="BwJ-We-o8N">
                             <connections>
                                 <action selector="openPhotos:" destination="5v7-hU-go5" id="ETM-EL-vUX"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Seleccionar" id="KC3-zt-UKP">
+                            <connections>
+                                <action selector="selectButton:" destination="5v7-hU-go5" id="5nX-DO-eAO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fps-Gr-zPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="5181" y="807"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab View Controller-->
         <scene sceneID="63o-4O-3vK">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7W5-e2-BpJ" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7W5-e2-BpJ" customClass="CustomTabViewController" customModule="Admeme" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h5A-QH-W9y">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -217,7 +236,7 @@
         <!--Ver todo-->
         <scene sceneID="z8y-C2-ICu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nQD-ZM-yPt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nQD-ZM-yPt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Ver todo" image="photo.fill.on.rectangle.fill" catalog="system" selectedImage="photo.fill.on.rectangle.fill" id="1Dd-Ax-c24"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8BE-FE-eyY">
@@ -225,6 +244,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d3n-Oh-16a">
+                        <rect key="frame" x="0.0" y="470" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="5v7-hU-go5" kind="relationship" relationship="rootViewController" id="yua-p4-clV"/>
                     </connections>
@@ -261,6 +284,6 @@
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7n7-dp-rUh"/>
+        <segue reference="Bcj-Rc-2Vd"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,9 +12,30 @@ import UIKit
 class ImageGridWithSegue: ImageGrid {
     
     var cellItems: [String] = []
+    var selectFlag: Bool = false
+    
+    @IBAction func selectButton(_ sender: Any) {
+        self.selectFlag = !self.selectFlag
+        self.tabBarController?.tabBar.isHidden = self.selectFlag
+        self.navigationController?.isToolbarHidden = !self.selectFlag
+    }
+    
+    @IBAction func shareButton(_ sender: Any) {
+    }
+    
+    @IBAction func removeButton(_ sender: Any) {
+    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        return self.cellItems.count
+    }
+    
+    override func viewDidLoad() {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -30,5 +51,12 @@ class ImageGridWithSegue: ImageGrid {
            viewController.cellIndex = indexPath.row
            viewController.imageGridView = self
        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if identifier == "detailViewSegue" {
+            return !self.selectFlag
+        }
+        return true
     }
 }
