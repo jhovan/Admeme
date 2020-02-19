@@ -48,6 +48,22 @@ class ImageGridWithSegue: ImageGrid {
     }
     
     @IBAction func removeButton(_ sender: Any) {
+        let indexPaths = self.collectionView.indexPathsForSelectedItems
+        var favorites: [String: Any] = UserDefaults.standard.dictionary(forKey: Constants.FAVORITES_KEY) ?? [:]
+        let previousCellItems = self.cellItems
+        for indexPath in indexPaths! {
+            let cellIndex = indexPath.row
+            let filePath = previousCellItems[cellIndex]
+            let fileName = URL(fileURLWithPath: filePath).lastPathComponent
+            ImageManager.removeImage(filePath: filePath)
+            self.cellItems.removeAll(where: {$0 == filePath})
+            if favorites.keys.contains(fileName) {
+                favorites.removeValue(forKey: fileName)
+            }
+        }
+        self.collectionView.reloadData()
+        UserDefaults.standard.set(favorites, forKey: Constants.FAVORITES_KEY)
+        changeSelectOption()
     }
     
     
