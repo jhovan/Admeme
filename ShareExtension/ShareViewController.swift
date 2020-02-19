@@ -13,7 +13,6 @@ import MobileCoreServices
 
 class ShareViewController: ImageGrid {
     
-    let sharedKey = "ShareKey"
     
     var selectedImages: [UIImage] = []
     var imagesData: [Data] = []
@@ -24,6 +23,8 @@ class ShareViewController: ImageGrid {
     }
     
     @IBAction func cancelButton(_ sender: Any) {
+        let userDefaults = UserDefaults(suiteName: Constants.GROUP)
+        userDefaults?.removeObject(forKey: Constants.SHARE_KEY)
         self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
     }
     
@@ -42,7 +43,7 @@ class ShareViewController: ImageGrid {
     }
     
     func redirectToHostApp() {
-        let url = URL(string: "Admeme://dataUrl=\(sharedKey)")
+        let url = URL(string: "Admeme://")
         var responder = self as UIResponder?
         let selectorOpenURL = sel_registerName("openURL:")
         
@@ -73,7 +74,7 @@ class ShareViewController: ImageGrid {
                             
 
                             let image = rawImage!
-                            let imgData = image.pngData()
+                            let imgData = image.jpegData(compressionQuality: 1)
                             
                             self?.selectedImages.append(image)
                             self?.imagesData.append(imgData!)
@@ -82,7 +83,8 @@ class ShareViewController: ImageGrid {
                                 DispatchQueue.main.async {
                                     self!.collectionView.reloadData()
                                     let userDefaults = UserDefaults(suiteName: Constants.GROUP)
-                                    userDefaults?.set(this.imagesData, forKey: this.sharedKey)
+                                    
+                                    userDefaults?.set(this.imagesData, forKey: Constants.SHARE_KEY)
                                     userDefaults?.synchronize()
                                 }
                             }

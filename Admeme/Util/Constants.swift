@@ -10,5 +10,6 @@ import Foundation
 
 class Constants {
     static let FAVORITES_KEY: String = "favorites"
-    static let GROUP: String = "group.com.admeme"
+    static let GROUP: String = "group.admeme"
+    static let SHARE_KEY = "ShareKey"
 }

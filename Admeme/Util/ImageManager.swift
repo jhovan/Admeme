@@ -36,6 +36,30 @@ class ImageManager {
         
         return nil
     }
+    
+    static func saveImage(image: UIImage) -> URL? {
+        
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil}
+
+        var fileURL: URL
+        repeat {
+            let fileName = UUID().uuidString + ".jpg"
+            fileURL = documentsDirectory.appendingPathComponent(fileName)
+        }
+        while FileManager.default.fileExists(atPath: fileURL.path)
+        
+
+        guard let data = image.jpegData(compressionQuality: 1) else { return nil}
+
+        do {
+            try data.write(to: fileURL)
+            return fileURL
+        } catch let error {
+            print("error saving file with error", error)
+        }
+        
+        return nil
+    }
 
     
     static func loadImageFromDiskWith(fileName: String) -> UIImage? {
