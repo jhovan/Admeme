@@ -307,7 +307,7 @@
         <!--Categorías-->
         <scene sceneID="Gax-Wp-dAY">
             <objects>
-                <collectionViewController id="D9a-xc-Za3" customClass="ImageGrid" customModule="Admeme" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="D9a-xc-Za3" customClass="CategoriesCollectionViewController" customModule="Admeme" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="s3y-Ji-nob">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -319,27 +319,28 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="lx5-1D-jTe">
+                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="p3u-dD-4Wq" customClass="ImageCollectionViewCell" customModule="Admeme" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="120-FX-GW4">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="a6e-ir-w4I">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="waX-br-knH">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lj3-ic-a39">
                                             <rect key="frame" x="10" y="10" width="80" height="80"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="waX-br-knH" firstAttribute="top" secondItem="120-FX-GW4" secondAttribute="top" constant="10" id="Q4a-WJ-Q2O"/>
-                                        <constraint firstAttribute="trailing" secondItem="waX-br-knH" secondAttribute="trailing" constant="10" id="VZi-Wn-kpm"/>
-                                        <constraint firstItem="waX-br-knH" firstAttribute="leading" secondItem="120-FX-GW4" secondAttribute="leading" constant="10" id="tmS-BT-yx1"/>
-                                        <constraint firstAttribute="bottom" secondItem="waX-br-knH" secondAttribute="bottom" constant="10" id="wwh-at-y3D"/>
+                                        <constraint firstAttribute="bottom" secondItem="lj3-ic-a39" secondAttribute="bottom" constant="10" id="Ag0-bB-c4F"/>
+                                        <constraint firstItem="lj3-ic-a39" firstAttribute="top" secondItem="a6e-ir-w4I" secondAttribute="top" constant="10" id="D6p-zD-2mj"/>
+                                        <constraint firstItem="lj3-ic-a39" firstAttribute="leading" secondItem="a6e-ir-w4I" secondAttribute="leading" constant="10" id="Jdi-M5-LaS"/>
+                                        <constraint firstAttribute="trailing" secondItem="lj3-ic-a39" secondAttribute="trailing" constant="10" id="Y3u-4f-Oss"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="afB-X9-C7u" kind="show" id="UYD-fk-a5B"/>
+                                    <outlet property="imageView" destination="lj3-ic-a39" id="fm3-D8-Tmj"/>
+                                    <segue destination="afB-X9-C7u" kind="show" identifier="groupSegue" id="jb4-Pd-Ij8"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -354,10 +355,10 @@
             </objects>
             <point key="canvasLocation" x="3356" y="2472"/>
         </scene>
-        <!--Image Grid With Detail-->
+        <!--Category Collection View Controller-->
         <scene sceneID="LsT-QA-yXO">
             <objects>
-                <collectionViewController hidesBottomBarWhenPushed="YES" id="afB-X9-C7u" customClass="ImageGridWithDetail" customModule="Admeme" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController hidesBottomBarWhenPushed="YES" id="afB-X9-C7u" customClass="CategoryCollectionViewController" customModule="Admeme" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="sJd-ZL-l7S">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

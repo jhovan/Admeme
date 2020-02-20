@@ -48,6 +48,10 @@ class ImageGridWithDetail: ImageGrid {
     }
     
     @IBAction func removeButton(_ sender: Any) {
+        removeSelection()
+    }
+    
+    func removeSelection() {
         let indexPaths = self.collectionView.indexPathsForSelectedItems
         var favorites: [String] = UserDefaults.standard.stringArray(forKey: Constants.FAVORITES_KEY) ?? []
         let previousCellItems = self.cellItems
@@ -65,7 +69,6 @@ class ImageGridWithDetail: ImageGrid {
         UserDefaults.standard.set(favorites, forKey: Constants.FAVORITES_KEY)
         changeSelectOption()
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.collectionView.indexPathsForSelectedItems?.count ?? 0 > 0 {
@@ -86,12 +89,13 @@ class ImageGridWithDetail: ImageGrid {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = false
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
-       cell.filePath = self.cellItems[indexPath.row]
+        cell.filePath = self.cellItems[indexPath.row]
        return cell
     }
     
