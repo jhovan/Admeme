@@ -246,10 +246,10 @@
             </objects>
             <point key="canvasLocation" x="5181" y="807"/>
         </scene>
-        <!--Custom Tab View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="63o-4O-3vK">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7W5-e2-BpJ" customClass="CustomTabViewController" customModule="Admeme" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7W5-e2-BpJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h5A-QH-W9y">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

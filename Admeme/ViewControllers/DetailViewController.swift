@@ -17,18 +17,18 @@ class DetailViewController: UIViewController {
     var cellIndex: Int?
     var imageGridView: ImageGridWithDetail?
     var filePath: String?
-    var favorites: [String: Any]? = [:]
+    var favorites: [String]? = []
     var fileName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let favorites =  UserDefaults.standard.dictionary(forKey: Constants.FAVORITES_KEY) {
+        if let favorites =  UserDefaults.standard.stringArray(forKey: Constants.FAVORITES_KEY) {
             self.favorites = favorites
         }
         self.filePath = self.imageGridView!.cellItems[cellIndex!]
         self.fileName =  URL(fileURLWithPath: self.filePath!).lastPathComponent
-        if ((self.favorites?.keys.contains(self.fileName!))!) {
+        if ((self.favorites?.contains(self.fileName!))!) {
             starButton.setImage(UIImage(systemName:"star.fill"), for: .normal)
         }
         self.imageView.image = UIImage(contentsOfFile: self.filePath!)
@@ -43,13 +43,13 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func starButton(_ sender: Any) {
-        if ((self.favorites?.keys.contains(self.fileName!))!) {
-            self.favorites?.removeValue(forKey: self.fileName!)
+        if ((self.favorites?.contains(self.fileName!))!) {
+            self.favorites?.removeAll(where: {$0 == self.fileName!})
             UserDefaults.standard.set(self.favorites, forKey: Constants.FAVORITES_KEY)
             starButton.setImage(UIImage(systemName:"star"), for: .normal)
         }
         else {
-            self.favorites?.updateValue(1, forKey: self.fileName!)
+            self.favorites?.append(self.fileName!)
             UserDefaults.standard.set(self.favorites, forKey: Constants.FAVORITES_KEY)
             starButton.setImage(UIImage(systemName:"star.fill"), for: .normal)
         }
@@ -60,8 +60,8 @@ class DetailViewController: UIViewController {
     @IBAction func removeButton(_ sender: Any) {
         ImageManager.removeImage(filePath: self.filePath!)
         self.imageGridView?.cellItems.remove(at: cellIndex!)
-        if ((self.favorites?.keys.contains(self.fileName!))!) {
-            self.favorites?.removeValue(forKey: self.fileName!)
+        if ((self.favorites?.contains(self.fileName!))!) {
+            self.favorites?.removeAll(where: {$0 == self.fileName!})
             UserDefaults.standard.set(self.favorites, forKey: Constants.FAVORITES_KEY)
         }
         dismiss(animated: true, completion: nil)

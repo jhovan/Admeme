@@ -28,8 +28,8 @@ class FavoritesCollectionViewController: ImageGridWithDetail {
     
     override func viewWillAppear(_ animated: Bool) {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
-        if let favorites =  UserDefaults.standard.dictionary(forKey: Constants.FAVORITES_KEY) {
-            self.cellItems = Array(favorites.keys).map({ documentsDirectory.appendingPathComponent($0).path})
+        if let favorites =  UserDefaults.standard.stringArray(forKey: Constants.FAVORITES_KEY) {
+            self.cellItems = favorites.map({ documentsDirectory.appendingPathComponent($0).path})
         }
         super.viewWillAppear(animated)
     }

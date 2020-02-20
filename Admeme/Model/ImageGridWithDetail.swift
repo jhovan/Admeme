@@ -49,7 +49,7 @@ class ImageGridWithDetail: ImageGrid {
     
     @IBAction func removeButton(_ sender: Any) {
         let indexPaths = self.collectionView.indexPathsForSelectedItems
-        var favorites: [String: Any] = UserDefaults.standard.dictionary(forKey: Constants.FAVORITES_KEY) ?? [:]
+        var favorites: [String] = UserDefaults.standard.stringArray(forKey: Constants.FAVORITES_KEY) ?? []
         let previousCellItems = self.cellItems
         for indexPath in indexPaths! {
             let cellIndex = indexPath.row
@@ -57,8 +57,8 @@ class ImageGridWithDetail: ImageGrid {
             let fileName = URL(fileURLWithPath: filePath).lastPathComponent
             ImageManager.removeImage(filePath: filePath)
             self.cellItems.removeAll(where: {$0 == filePath})
-            if favorites.keys.contains(fileName) {
-                favorites.removeValue(forKey: fileName)
+            if favorites.contains(fileName) {
+                favorites.removeAll(where: {$0 == fileName})
             }
         }
         self.collectionView.reloadData()
