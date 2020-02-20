@@ -26,7 +26,7 @@
 		0E4B708523FB5CFE0098CC12 /* ImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */; };
 		0E4B708823FBD0150098CC12 /* ImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */; };
 		0E4B708923FBD0870098CC12 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */; };
-		0E4B708F23FBD3E10098CC12 /* ImageGridWithSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708E23FBD3E10098CC12 /* ImageGridWithSegue.swift */; };
+		0E4B708F23FBD3E10098CC12 /* ImageGridWithDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708E23FBD3E10098CC12 /* ImageGridWithDetail.swift */; };
 		0E4B709023FBE23D0098CC12 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708023FB49FD0098CC12 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +95,7 @@
 		0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGrid.swift; sourceTree = "<group>"; };
 		0E4B708623FBCD920098CC12 /* Admeme.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Admeme.entitlements; sourceTree = "<group>"; };
 		0E4B708723FBCED10098CC12 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
-		0E4B708E23FBD3E10098CC12 /* ImageGridWithSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridWithSegue.swift; sourceTree = "<group>"; };
+		0E4B708E23FBD3E10098CC12 /* ImageGridWithDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridWithDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				0E4B708423FB5CFE0098CC12 /* ImageGrid.swift */,
-				0E4B708E23FBD3E10098CC12 /* ImageGridWithSegue.swift */,
+				0E4B708E23FBD3E10098CC12 /* ImageGridWithDetail.swift */,
 				0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */,
 			);
 			path = Model;
@@ -392,7 +392,7 @@
 				0E4B708323FB5A940098CC12 /* FavoritesCollectionViewController.swift in Sources */,
 				0E4B707823F7E8E20098CC12 /* VerTodoCollectionViewController.swift in Sources */,
 				0E4B707623F7E49B0098CC12 /* ImageCollectionViewCell.swift in Sources */,
-				0E4B708F23FBD3E10098CC12 /* ImageGridWithSegue.swift in Sources */,
+				0E4B708F23FBD3E10098CC12 /* ImageGridWithDetail.swift in Sources */,
 				0E0CFF6023F65C3E000CC14C /* AppDelegate.swift in Sources */,
 				0E4B707B23FA811F0098CC12 /* DetailViewController.swift in Sources */,
 				0E4B708123FB49FD0098CC12 /* Constants.swift in Sources */,

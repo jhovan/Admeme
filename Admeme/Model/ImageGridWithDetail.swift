@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ImageGridWithSegue: ImageGrid {
+class ImageGridWithDetail: ImageGrid {
     
     var cellItems: [String] = []
     var selectFlag: Bool = false

@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var starButton: UIButton!
     
     var cellIndex: Int?
-    var imageGridView: ImageGridWithSegue?
+    var imageGridView: ImageGridWithDetail?
     var filePath: String?
     var favorites: [String: Any]? = [:]
     var fileName: String?
