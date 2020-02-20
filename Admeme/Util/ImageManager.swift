@@ -25,7 +25,7 @@ class ImageManager {
             fileURL = documentsDirectory.appendingPathComponent(fileName)
         }
 
-        guard let data = image.jpegData(compressionQuality: 1) else { return nil}
+        guard let data = image.jpegData(compressionQuality: 0.0) else { return nil}
 
         do {
             try data.write(to: fileURL)
