@@ -78,7 +78,7 @@ class VerTodoCollectionViewController: ImageGridWithDetail, UIImagePickerControl
             PHPhotoLibrary.shared().performChanges({
                 PHAssetChangeRequest.deleteAssets(enumeration)
             }, completionHandler: {success, error in
-                print(success ? "Success" :  "Error" )
+                print(success ? "Success removing from Photos" :  "Error removing from Photos" )
             })
         }
 
