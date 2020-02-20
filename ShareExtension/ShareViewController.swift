@@ -74,7 +74,8 @@ class ShareViewController: ImageGrid {
                             
 
                             let image = rawImage!
-                            let imgData = image.jpegData(compressionQuality: 1)
+                            let imgData = image.jpegData(compressionQuality: 0.0)
+                            
                             
                             self?.selectedImages.append(image)
                             self?.imagesData.append(imgData!)
