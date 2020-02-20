@@ -89,10 +89,6 @@ class ImageGridWithDetail: ImageGrid {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
-    }
-
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
        cell.filePath = self.cellItems[indexPath.row]

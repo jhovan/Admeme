@@ -15,6 +15,11 @@ class ImageGrid: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     let cellsByRow: CGFloat = 3
 
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+
+    
     override func viewWillAppear(_ animated: Bool) {
        self.collectionView.reloadData()
     }
