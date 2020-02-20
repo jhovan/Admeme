@@ -435,11 +435,11 @@
             </objects>
             <point key="canvasLocation" x="4356" y="2472"/>
         </scene>
-        <!--Item-->
+        <!--Clasificar-->
         <scene sceneID="ENy-al-ftH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oCs-Bd-cBL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="lightbulb.fill" catalog="system" selectedImage="lightbulb.fill" id="WNK-6P-zrK"/>
+                    <tabBarItem key="tabBarItem" title="Clasificar" image="lightbulb.fill" catalog="system" selectedImage="lightbulb.fill" id="WNK-6P-zrK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Q6-Kf-UT6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
