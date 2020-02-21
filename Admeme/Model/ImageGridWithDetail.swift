@@ -29,7 +29,8 @@ class ImageGridWithDetail: ImageGrid {
         self.removeButton.isEnabled = false
         self.selectFlag = !self.selectFlag
         self.tabBarController?.tabBar.isHidden = self.selectFlag
-        self.navigationController?.isToolbarHidden = !self.selectFlag
+        //self.navigationController?.isToolbarHidden = !self.selectFlag
+        self.navigationController?.setToolbarHidden(!self.selectFlag, animated: true)
         self.collectionView.allowsSelection = false
         self.collectionView.allowsSelection = true
         self.collectionView.allowsMultipleSelection = self.selectFlag

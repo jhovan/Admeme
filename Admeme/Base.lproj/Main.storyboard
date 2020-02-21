@@ -327,17 +327,17 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lj3-ic-a39">
-                                            <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                            <rect key="frame" x="5" y="5" width="90" height="90"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="lj3-ic-a39" secondAttribute="bottom" constant="10" id="Ag0-bB-c4F"/>
-                                        <constraint firstItem="lj3-ic-a39" firstAttribute="top" secondItem="a6e-ir-w4I" secondAttribute="top" constant="10" id="D6p-zD-2mj"/>
-                                        <constraint firstItem="lj3-ic-a39" firstAttribute="leading" secondItem="a6e-ir-w4I" secondAttribute="leading" constant="10" id="Jdi-M5-LaS"/>
-                                        <constraint firstAttribute="trailing" secondItem="lj3-ic-a39" secondAttribute="trailing" constant="10" id="Y3u-4f-Oss"/>
+                                        <constraint firstAttribute="bottom" secondItem="lj3-ic-a39" secondAttribute="bottom" constant="5" id="Ag0-bB-c4F"/>
+                                        <constraint firstItem="lj3-ic-a39" firstAttribute="top" secondItem="a6e-ir-w4I" secondAttribute="top" constant="5" id="D6p-zD-2mj"/>
+                                        <constraint firstItem="lj3-ic-a39" firstAttribute="leading" secondItem="a6e-ir-w4I" secondAttribute="leading" constant="5" id="Jdi-M5-LaS"/>
+                                        <constraint firstAttribute="trailing" secondItem="lj3-ic-a39" secondAttribute="trailing" constant="5" id="Y3u-4f-Oss"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="imageView" destination="lj3-ic-a39" id="fm3-D8-Tmj"/>
                                     <segue destination="afB-X9-C7u" kind="show" identifier="groupSegue" id="jb4-Pd-Ij8"/>
