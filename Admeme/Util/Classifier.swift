@@ -7,17 +7,66 @@
 //
 
 import Foundation
+import Vision
+
 
 class Classifier {
     
     // ALWAYS returns non empty arrays
     static func getGroups() -> [[String]] {
         let urls =  ImageManager.getAllFilesUrls()
+        var featurePrints: [VNFeaturePrintObservation?] = []
         var groups: [[String]] = []
+        
         for url in urls {
-            groups.append([url.path])
+            featurePrints.append(self.featureprintObservationForImage(atURL: url))
+        }
+        
+        for i in stride(from: 1, through: 10, by: 1){
+            print(i)
+        }
+        
+        var inGroup = [Bool](repeatElement(false,
+                                           count: featurePrints.count))
+        for i in stride(from: 0, through: featurePrints.count - 1, by: 1) {
+            if !inGroup[i] {
+                if let featurePrint = featurePrints[i] {
+                    var group: [String] = [urls[i].path]
+                    inGroup[i] = true
+                    for j in stride(from: i + 1, through: featurePrints.count - 1, by: 1) {
+                        if !inGroup[j] {
+                            if let comparingPrint = featurePrints[j] {
+                                do {
+                                    var distance = Float(0)
+                                    try featurePrint.computeDistance(&distance, to: comparingPrint)
+                                    //print("Distance from \(i) to \(j): \(distance)")
+                                    if distance <= Constants.MAX_DISTANCE {
+                                        group.append(urls[j].path)
+                                        inGroup[j] = true
+                                    }
+                                }
+                                catch {
+                                    
+                                }
+                            }
+                        }
+                    }
+                    groups.append(group)
+                }
+            }
         }
         return groups
     }
     
+    static private func featureprintObservationForImage(atURL url: URL) -> VNFeaturePrintObservation? {
+        let requestHandler = VNImageRequestHandler(url: url, options: [:])
+        let request = VNGenerateImageFeaturePrintRequest()
+        do {
+            try requestHandler.perform([request])
+            return request.results?.first as? VNFeaturePrintObservation
+        } catch {
+            print("Vision error: \(error)")
+            return nil
+        }
+    }
 }

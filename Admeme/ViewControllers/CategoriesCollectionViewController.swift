@@ -17,14 +17,16 @@ class CategoriesCollectionViewController: ImageGrid {
        return self.groups.count
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.groups = Classifier.getGroups()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isToolbarHidden = true
-        self.groups = Classifier.getGroups()
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-    
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
         cell.filePath = self.groups[indexPath.row][0]
         return cell
@@ -38,5 +40,10 @@ class CategoriesCollectionViewController: ImageGrid {
        }
     }
 
+    @IBAction func updateButton(_ sender: Any) {
+        self.groups = Classifier.getGroups()
+        self.collectionView.reloadData()
+    }
+    
 
 }

@@ -349,7 +349,13 @@
                             <outlet property="delegate" destination="D9a-xc-Za3" id="pA6-Hj-gmi"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Categorías" id="Z1q-EM-iZ0"/>
+                    <navigationItem key="navigationItem" title="Categorías" id="Z1q-EM-iZ0">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.2.circlepath" catalog="system" id="ZY4-Wa-JCW">
+                            <connections>
+                                <action selector="updateButton:" destination="D9a-xc-Za3" id="HSf-Iy-CjV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9b8-LT-W5N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -436,11 +442,11 @@
             </objects>
             <point key="canvasLocation" x="4356" y="2472"/>
         </scene>
-        <!--Clasificar-->
+        <!--Agrupar-->
         <scene sceneID="ENy-al-ftH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oCs-Bd-cBL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Clasificar" image="lightbulb.fill" catalog="system" selectedImage="lightbulb.fill" id="WNK-6P-zrK"/>
+                    <tabBarItem key="tabBarItem" title="Agrupar" image="lightbulb.fill" catalog="system" selectedImage="lightbulb.fill" id="WNK-6P-zrK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Q6-Kf-UT6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -457,6 +463,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.2.circlepath" catalog="system" width="64" height="50"/>
         <image name="lightbulb.fill" catalog="system" width="56" height="64"/>
         <image name="photo.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
