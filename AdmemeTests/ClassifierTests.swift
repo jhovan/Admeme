@@ -1,15 +1,15 @@
 //
-//  AdmemeTests.swift
+//  ClassifierTests.swift
 //  AdmemeTests
 //
-//  Created by Jhovan Gallardo on 13/02/20.
+//  Created by Jhovan Gallardo on 23/02/20.
 //  Copyright © 2020 UNAM. All rights reserved.
 //
 
 import XCTest
 @testable import Admeme
 
-class AdmemeTests: XCTestCase {
+class ClassifierTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
