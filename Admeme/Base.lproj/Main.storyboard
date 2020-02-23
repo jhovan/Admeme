@@ -172,7 +172,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wvq-fd-p8a">
-                                <rect key="frame" x="0.0" y="35" width="320" height="467"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="462"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNL-qe-Y70">
                                 <rect key="frame" x="16" y="518" width="30" height="30"/>
@@ -208,10 +208,16 @@
                                     <action selector="removeButton:" destination="7gU-Xx-E3B" eventType="touchUpInside" id="2Yw-79-hAj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3u-58-8dA">
-                                <rect key="frame" x="290" y="0.0" width="30" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="X"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3u-58-8dA">
+                                <rect key="frame" x="8" y="8" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="AsQ-Ev-iPP"/>
+                                    <constraint firstAttribute="width" constant="28" id="ghI-CI-cp8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" image="xmark" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="closeButton:" destination="7gU-Xx-E3B" eventType="touchUpInside" id="Tc3-rP-Rdy"/>
                                 </connections>
@@ -220,17 +226,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pNL-qe-Y70" firstAttribute="leading" secondItem="nlF-q0-TYL" secondAttribute="leading" constant="16" id="0qd-gE-gma"/>
-                            <constraint firstItem="Wvq-fd-p8a" firstAttribute="top" secondItem="nlF-q0-TYL" secondAttribute="top" constant="35" id="5z2-na-mys"/>
+                            <constraint firstItem="Wvq-fd-p8a" firstAttribute="top" secondItem="nlF-q0-TYL" secondAttribute="top" constant="40" id="5z2-na-mys"/>
                             <constraint firstItem="pNL-qe-Y70" firstAttribute="top" secondItem="Wvq-fd-p8a" secondAttribute="bottom" constant="16" id="FxX-yT-qls"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="trailing" secondItem="Der-pP-hga" secondAttribute="trailing" constant="16" id="IQ0-X8-iJc"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="bottom" secondItem="pNL-qe-Y70" secondAttribute="bottom" constant="20" id="JPL-Yd-rDL"/>
+                            <constraint firstItem="B3u-58-8dA" firstAttribute="leading" secondItem="nlF-q0-TYL" secondAttribute="leading" constant="8" id="Jbp-8r-eSo"/>
                             <constraint firstItem="Wvq-fd-p8a" firstAttribute="leading" secondItem="nlF-q0-TYL" secondAttribute="leading" id="Jvu-mX-VCd"/>
                             <constraint firstItem="Cnv-eF-mxS" firstAttribute="centerX" secondItem="nlF-q0-TYL" secondAttribute="centerX" id="T9d-4y-ThT"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="trailing" secondItem="Wvq-fd-p8a" secondAttribute="trailing" id="evH-oW-4rM"/>
+                            <constraint firstItem="B3u-58-8dA" firstAttribute="top" secondItem="nlF-q0-TYL" secondAttribute="top" constant="8" id="fzK-wC-Q7a"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="bottom" secondItem="Cnv-eF-mxS" secondAttribute="bottom" constant="20" id="gxF-L3-Uin"/>
-                            <constraint firstItem="B3u-58-8dA" firstAttribute="trailing" secondItem="nlF-q0-TYL" secondAttribute="trailing" id="jTr-6w-sPN"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="bottom" secondItem="Der-pP-hga" secondAttribute="bottom" constant="20" id="lb6-4C-gbl"/>
-                            <constraint firstItem="B3u-58-8dA" firstAttribute="top" secondItem="nlF-q0-TYL" secondAttribute="top" id="vP1-2X-YMI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nlF-q0-TYL"/>
                     </view>
@@ -460,6 +466,7 @@
         <image name="star" catalog="system" width="64" height="58"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
         <image name="trash" catalog="system" width="60" height="64"/>
+        <image name="xmark" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7n7-dp-rUh"/>
