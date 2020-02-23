@@ -127,4 +127,12 @@ class ImageManager {
     static func loadImageFromDiskWith(imageUrl: URL) -> UIImage? {
             return UIImage(contentsOfFile: imageUrl.path)
     }
+    
+    // removes all images from documents
+    static func removeAllFiles() {
+        let urls = getAllFileUrls()
+        for url in urls {
+            removeImage(fileURL: url)
+        }
+    }
 }
