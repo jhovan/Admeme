@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+// Defines image cells behaviour 
 class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!

@@ -22,12 +22,14 @@ class ShareViewController: ImageGrid {
         self.manageImages()
     }
     
+    // Removes previously stored data from disk
     @IBAction func cancelButton(_ sender: Any) {
         let userDefaults = UserDefaults(suiteName: Constants.GROUP)
         userDefaults?.removeObject(forKey: Constants.SHARE_KEY)
         self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
     }
     
+    // Opens then main app
     @IBAction func addButton(_ sender: Any) {
         self.redirectToHostApp()
     }
@@ -42,6 +44,7 @@ class ShareViewController: ImageGrid {
        return self.selectedImages.count
     }
     
+    // Opens the main app with an empty URL
     func redirectToHostApp() {
         let url = URL(string: "Admeme://")
         var responder = self as UIResponder?
@@ -56,6 +59,8 @@ class ShareViewController: ImageGrid {
         self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
     }
     
+    
+    // Stores selected images into UserDefaults group temporary
     func manageImages() {
         
         let content = extensionContext!.inputItems[0] as! NSExtensionItem
@@ -74,6 +79,7 @@ class ShareViewController: ImageGrid {
                             
 
                             let image = rawImage!
+                            // reduces image quality to avoid memory issues
                             let imgData = image.jpegData(compressionQuality: 0.0)
                             
                             
@@ -110,14 +116,4 @@ class ShareViewController: ImageGrid {
         }
     }
 
-}
-
-extension UIImage {
-    class func resizeImage(image: UIImage, width: CGFloat, height: CGFloat) -> UIImage {
-        UIGraphicsBeginImageContext(CGSize(width: width, height: height))
-        image.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage!
-    }
 }

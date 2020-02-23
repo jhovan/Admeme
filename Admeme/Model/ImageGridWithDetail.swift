@@ -11,6 +11,7 @@ import UIKit
 
 class ImageGridWithDetail: ImageGrid {
     
+    // Cell items are file paths to the images
     var cellItems: [String] = []
     var selectFlag: Bool = false
     
@@ -24,12 +25,12 @@ class ImageGridWithDetail: ImageGrid {
         changeSelectOption()
     }
     
+    // Modifies UI allowing selection options
     func changeSelectOption() {
         self.shareButton.isEnabled = false
         self.removeButton.isEnabled = false
         self.selectFlag = !self.selectFlag
         self.tabBarController?.tabBar.isHidden = self.selectFlag
-        //self.navigationController?.isToolbarHidden = !self.selectFlag
         self.navigationController?.setToolbarHidden(!self.selectFlag, animated: true)
         self.collectionView.allowsSelection = false
         self.collectionView.allowsSelection = true
@@ -37,6 +38,7 @@ class ImageGridWithDetail: ImageGrid {
         selectButton.title = self.selectFlag ? "Cancelar" : "Seleccionar"
     }
     
+    // Shares selected images
     @IBAction func shareButton(_ sender: Any) {
         let indexPaths = self.collectionView.indexPathsForSelectedItems
         var images: [UIImage] = []
@@ -52,6 +54,7 @@ class ImageGridWithDetail: ImageGrid {
         removeSelection()
     }
     
+    // Removes selected images safely
     func removeSelection() {
         let indexPaths = self.collectionView.indexPathsForSelectedItems
         var favorites: [String] = UserDefaults.standard.stringArray(forKey: Constants.FAVORITES_KEY) ?? []
@@ -71,6 +74,7 @@ class ImageGridWithDetail: ImageGrid {
         changeSelectOption()
     }
     
+    // Enables sharing and removing when there is something selected
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.collectionView.indexPathsForSelectedItems?.count ?? 0 > 0 {
             self.shareButton.isEnabled = true
@@ -78,6 +82,7 @@ class ImageGridWithDetail: ImageGrid {
         }
     }
     
+    // Disables sharing and removing when there is nothing selected
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if self.collectionView.indexPathsForSelectedItems?.count ?? 0 == 0 {
             self.shareButton.isEnabled = false
@@ -101,6 +106,7 @@ class ImageGridWithDetail: ImageGrid {
     }
     
     
+    // Sends required data to the detailView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if segue.identifier == "detailViewSegue" {
            let viewController: DetailViewController = segue.destination as! DetailViewController
@@ -110,6 +116,7 @@ class ImageGridWithDetail: ImageGrid {
        }
     }
     
+    // Disables the segue during selection mode
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
         if identifier == "detailViewSegue" {
             return !self.selectFlag

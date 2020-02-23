@@ -11,6 +11,7 @@ import UIKit
 
 class CategoriesCollectionViewController: ImageGrid {
 
+    // groups are arrays of arrays of filepaths
     var groups: [[String]] = []
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -33,6 +34,7 @@ class CategoriesCollectionViewController: ImageGrid {
         return cell
     }
     
+    // Prepares data required for Category view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "groupSegue" {
             let viewController: CategoryCollectionViewController = segue.destination as! CategoryCollectionViewController
@@ -43,6 +45,7 @@ class CategoriesCollectionViewController: ImageGrid {
 
     
 
+    // Refreshes groups data asynchronously if necessary
     func asynchronousRefreshing() {
         
         // If a file was removed, it is removed manually from the groups
@@ -70,7 +73,7 @@ class CategoriesCollectionViewController: ImageGrid {
             indicator.startAnimating()
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: indicator)
             let dataOperation = BlockOperation {
-                self.groups = Classifier.getGroups()
+                self.groups = Classifier.generateGroups()
             }
             let UIOperation = BlockOperation {
                 self.collectionView.reloadData()

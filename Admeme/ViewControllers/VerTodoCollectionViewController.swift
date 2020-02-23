@@ -56,7 +56,7 @@ class VerTodoCollectionViewController: ImageGridWithDetail, UIImagePickerControl
         var url: URL?
         url = ImageManager.saveImage(image: image)
                     
-        // Removes the image from Photos
+        // Removes the image from Photos in case there is authorization
         let status = PHPhotoLibrary.authorizationStatus()
     
         if status == .authorized {
@@ -74,6 +74,7 @@ class VerTodoCollectionViewController: ImageGridWithDetail, UIImagePickerControl
         if let url = url {
             self.cellItems.append(url.path)
         }
+        
         self.collectionView.reloadData()
 
         picker.dismiss(animated: true, completion: nil)
