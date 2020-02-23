@@ -10,26 +10,55 @@ import XCTest
 @testable import Admeme
 
 class ImageManagerTests: XCTestCase {
-
+    
+    var image: UIImage?
+    var url: URL?
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let bundle = Bundle(for: ImageManagerTests.self)
+        self.image = UIImage(named: "perro", in: bundle, compatibleWith: nil)
+        self.url = ImageManager.saveImage(image: self.image!)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        ImageManager.removeImage(fileURL: self.url!)
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testSaveImageWithoutName() {
+        let urlsBefore = ImageManager.getAllFileUrls()
+        let newUrl = ImageManager.saveImage(image: self.image!)
+        let urlsAfter =  ImageManager.getAllFileUrls()
+        assert(urlsAfter.count > urlsBefore.count)
+        assert(urlsAfter.contains(newUrl!))
     }
     
+    func testSaveImageWithName() {
+        let urlsBefore = ImageManager.getAllFileUrls()
+        let newUrl = ImageManager.saveImage(imageName: "Test", image: self.image!)
+        let urlsAfter =  ImageManager.getAllFileUrls()
+        assert(urlsAfter.count > urlsBefore.count)
+        assert(urlsAfter.contains(newUrl!))
+    }
+    
+    func testRemoveExistentImage() {
+        let urlsBefore = ImageManager.getAllFileUrls()
+        ImageManager.removeImage(fileURL: self.url!)
+        let urlsAfter =  ImageManager.getAllFileUrls()
+        assert(urlsAfter.count < urlsBefore.count)
+        assert(!urlsAfter.contains(self.url!))
+    }
+    
+    func testRemoveInexistentImage() {
+        ImageManager.removeImage(fileURL: self.url!)
+        let urlsBefore = ImageManager.getAllFileUrls()
+        ImageManager.removeImage(fileURL: self.url!)
+        let urlsAfter =  ImageManager.getAllFileUrls()
+        assert(urlsAfter.count == urlsBefore.count)
+        assert(!urlsAfter.contains(self.url!))
+    }
+    
+    func testLoadFromDisk() {
+        XCTAssertNotNil(ImageManager.loadImageFromDiskWith(imageUrl: self.url!))
+    }
 
 }

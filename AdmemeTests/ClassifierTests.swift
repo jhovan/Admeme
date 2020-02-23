@@ -11,25 +11,46 @@ import XCTest
 
 class ClassifierTests: XCTestCase {
 
+    let bundle = Bundle(for: ImageManagerTests.self)
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        ImageManager.removeAllFiles()
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testGroupsWithoutFiles() {
+        let groups = Classifier.generateGroups()
+        assert(groups.isEmpty)
     }
     
-
+    func testGroupsWithDifferentImages() {
+        var image = UIImage(named: "perro", in: bundle, compatibleWith: nil)
+        _ = ImageManager.saveImage(image: image!)
+        image = UIImage(named: "gato", in: bundle, compatibleWith: nil)
+        _ = ImageManager.saveImage(image: image!)
+        let groups = Classifier.generateGroups()
+        assert(groups.count == 2)
+        assert(union(groups: groups).count == ImageManager.getAllFileUrls().count)
+    }
+    
+    func testGroupsWithSameImage() {
+        var image = UIImage(named: "perro", in: bundle, compatibleWith: nil)
+        _ = ImageManager.saveImage(image: image!)
+        image = UIImage(named: "perro", in: bundle, compatibleWith: nil)
+        _ = ImageManager.saveImage(image: image!)
+        let groups = Classifier.generateGroups()
+        assert(groups.count == 1)
+        assert(union(groups: groups).count == ImageManager.getAllFileUrls().count)
+        
+    }
+    
+    // returns the union of an array of arrays of stringsx
+    func union(groups: [[String]]) -> [String] {
+        var union:[String] = []
+        for group in groups {
+            union += group
+        }
+        return union
+    }
+    
+    
 }
