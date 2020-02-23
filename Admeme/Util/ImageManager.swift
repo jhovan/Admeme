@@ -12,8 +12,7 @@ import UIKit
 class ImageManager {
     
     static func saveImage(imageName: String, image: UIImage) -> URL?{
-
-
+        
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil}
 
         var fileName = imageName
@@ -94,7 +93,7 @@ class ImageManager {
     }
     
     
-    static func getAllFilesUrls() -> [URL] {
+    static func getAllFileUrls() -> [URL] {
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         do {
@@ -104,7 +103,15 @@ class ImageManager {
             print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
             return []
         }
-
+    }
+    
+    static func getAllFilepaths() -> [String] {
+        let urls = getAllFileUrls()
+        var filepaths:[String] = []
+        for url in urls {
+            filepaths.append(url.path)
+        }
+        return filepaths
     }
     
     static func loadImageFromDiskWith(imageUrl: URL) -> UIImage? {

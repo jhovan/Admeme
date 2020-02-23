@@ -17,14 +17,6 @@ class VerTodoCollectionViewController: ImageGridWithDetail, UIImagePickerControl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //self.collectionView!.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-        
         
         NotificationCenter.default.addObserver(
         self,
@@ -51,11 +43,7 @@ class VerTodoCollectionViewController: ImageGridWithDetail, UIImagePickerControl
     
     override func viewWillAppear(_ animated: Bool) {
         // load files from documents
-        let urls = ImageManager.getAllFilesUrls()
-        self.cellItems = []
-        for url in urls {
-            self.cellItems.append(url.path)
-        }
+        self.cellItems = ImageManager.getAllFilepaths()
         super.viewWillAppear(animated)
     }
 

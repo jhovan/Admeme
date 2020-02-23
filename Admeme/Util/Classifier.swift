@@ -14,7 +14,7 @@ class Classifier {
     
     // ALWAYS returns non empty arrays
     static func getGroups() -> [[String]] {
-        let urls =  ImageManager.getAllFilesUrls()
+        let urls =  ImageManager.getAllFileUrls()
         var featurePrints: [VNFeaturePrintObservation?] = []
         var groups: [[String]] = []
         
