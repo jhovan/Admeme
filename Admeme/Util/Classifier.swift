@@ -22,10 +22,6 @@ class Classifier {
             featurePrints.append(self.featureprintObservationForImage(atURL: url))
         }
         
-        for i in stride(from: 1, through: 10, by: 1){
-            print(i)
-        }
-        
         var inGroup = [Bool](repeatElement(false,
                                            count: featurePrints.count))
         for i in stride(from: 0, through: featurePrints.count - 1, by: 1) {
@@ -39,7 +35,6 @@ class Classifier {
                                 do {
                                     var distance = Float(0)
                                     try featurePrint.computeDistance(&distance, to: comparingPrint)
-                                    //print("Distance from \(i) to \(j): \(distance)")
                                     if distance <= Constants.MAX_DISTANCE {
                                         group.append(urls[j].path)
                                         inGroup[j] = true
