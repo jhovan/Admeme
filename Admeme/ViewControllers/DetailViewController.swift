@@ -22,7 +22,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let favorites =  UserDefaults.standard.stringArray(forKey: Constants.FAVORITES_KEY) {
             self.favorites = favorites
         }
@@ -34,14 +33,21 @@ class DetailViewController: UIViewController {
         self.imageView.image = UIImage(contentsOfFile: self.filePath!)
     }
     
+    // If the file is inexistent, removes trash and dismisses the view
+    override func viewWillAppear(_ animated: Bool) {
+        if self.imageView.image == nil {
+            removeCompletely()
+        }
+    }
     
+    // Allows to share the image
     @IBAction func shareButton(_ sender: Any) {
         let items = [UIImage(contentsOfFile: self.filePath!)]
         let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
         present(ac, animated: true)
     }
     
-    
+    // Adds and removes image from favorites
     @IBAction func starButton(_ sender: Any) {
         if ((self.favorites?.contains(self.fileName!))!) {
             self.favorites?.removeAll(where: {$0 == self.fileName!})
@@ -58,6 +64,15 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func removeButton(_ sender: Any) {
+        removeCompletely()
+    }
+    
+    @IBAction func closeButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Removes a file safely
+    func removeCompletely() {
         ImageManager.removeImage(filePath: self.filePath!)
         self.imageGridView?.cellItems.remove(at: cellIndex!)
         if ((self.favorites?.contains(self.fileName!))!) {
@@ -66,11 +81,5 @@ class DetailViewController: UIViewController {
         }
         dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func closeButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-
 
 }

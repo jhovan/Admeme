@@ -15,6 +15,8 @@
 		0E0CFF7723F65C3F000CC14C /* AdmemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CFF7623F65C3F000CC14C /* AdmemeTests.swift */; };
 		0E0CFF8223F65C3F000CC14C /* AdmemeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CFF8123F65C3F000CC14C /* AdmemeUITests.swift */; };
 		0E0CFF9123F67E72000CC14C /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CFF9023F67E72000CC14C /* ImageManager.swift */; };
+		0E16181D23FEC1AD00CF9B2D /* CategoriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E16181C23FEC1AD00CF9B2D /* CategoriesCollectionViewController.swift */; };
+		0E16182323FEC3CC00CF9B2D /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E16182223FEC3CC00CF9B2D /* Classifier.swift */; };
 		0E4B706723F788CA0098CC12 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B706623F788CA0098CC12 /* ShareViewController.swift */; };
 		0E4B706A23F788CA0098CC12 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4B706823F788CA0098CC12 /* MainInterface.storyboard */; };
 		0E4B706E23F788CA0098CC12 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0E4B706423F788CA0098CC12 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -28,6 +30,7 @@
 		0E4B708923FBD0870098CC12 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B707523F7E49B0098CC12 /* ImageCollectionViewCell.swift */; };
 		0E4B708F23FBD3E10098CC12 /* ImageGridWithDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708E23FBD3E10098CC12 /* ImageGridWithDetail.swift */; };
 		0E4B709023FBE23D0098CC12 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4B708023FB49FD0098CC12 /* Constants.swift */; };
+		0E9BDCA223FED58D009AF5C2 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9BDCA123FED58D009AF5C2 /* CategoryCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,8 @@
 		0E0CFF8123F65C3F000CC14C /* AdmemeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmemeUITests.swift; sourceTree = "<group>"; };
 		0E0CFF8323F65C3F000CC14C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E0CFF9023F67E72000CC14C /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		0E16181C23FEC1AD00CF9B2D /* CategoriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewController.swift; sourceTree = "<group>"; };
+		0E16182223FEC3CC00CF9B2D /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 		0E4B706423F788CA0098CC12 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4B706623F788CA0098CC12 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		0E4B706923F788CA0098CC12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 		0E4B708623FBCD920098CC12 /* Admeme.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Admeme.entitlements; sourceTree = "<group>"; };
 		0E4B708723FBCED10098CC12 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		0E4B708E23FBD3E10098CC12 /* ImageGridWithDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridWithDetail.swift; sourceTree = "<group>"; };
+		0E9BDCA123FED58D009AF5C2 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,7 @@
 			children = (
 				0E0CFF9023F67E72000CC14C /* ImageManager.swift */,
 				0E4B708023FB49FD0098CC12 /* Constants.swift */,
+				0E16182223FEC3CC00CF9B2D /* Classifier.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -213,6 +220,8 @@
 				0E4B707A23FA811F0098CC12 /* DetailViewController.swift */,
 				0E4B707723F7E8E20098CC12 /* VerTodoCollectionViewController.swift */,
 				0E4B708223FB5A940098CC12 /* FavoritesCollectionViewController.swift */,
+				0E16181C23FEC1AD00CF9B2D /* CategoriesCollectionViewController.swift */,
+				0E9BDCA123FED58D009AF5C2 /* CategoryCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -392,11 +401,14 @@
 				0E4B708323FB5A940098CC12 /* FavoritesCollectionViewController.swift in Sources */,
 				0E4B707823F7E8E20098CC12 /* VerTodoCollectionViewController.swift in Sources */,
 				0E4B707623F7E49B0098CC12 /* ImageCollectionViewCell.swift in Sources */,
+				0E16182323FEC3CC00CF9B2D /* Classifier.swift in Sources */,
 				0E4B708F23FBD3E10098CC12 /* ImageGridWithDetail.swift in Sources */,
 				0E0CFF6023F65C3E000CC14C /* AppDelegate.swift in Sources */,
+				0E9BDCA223FED58D009AF5C2 /* CategoryCollectionViewController.swift in Sources */,
 				0E4B707B23FA811F0098CC12 /* DetailViewController.swift in Sources */,
 				0E4B708123FB49FD0098CC12 /* Constants.swift in Sources */,
 				0E4B708523FB5CFE0098CC12 /* ImageGrid.swift in Sources */,
+				0E16181D23FEC1AD00CF9B2D /* CategoriesCollectionViewController.swift in Sources */,
 				0E0CFF6223F65C3E000CC14C /* SceneDelegate.swift in Sources */,
 				0E0CFF9123F67E72000CC14C /* ImageManager.swift in Sources */,
 			);

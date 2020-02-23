@@ -8,10 +8,12 @@
 
 import UIKit
 
+
+// Defines image cells behaviour 
 class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    
+    var originalBackgroundColor: UIColor?
     
     var filePath: String? {
         didSet {
@@ -22,10 +24,11 @@ class ImageCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+        
     func configure(_ filePath: String?) {
         if let filePath = filePath {
-            self.imageView.image = UIImage(contentsOfFile: filePath)!
+            self.originalBackgroundColor = self.backgroundColor
+            self.imageView.image = UIImage(contentsOfFile: filePath) ?? UIImage(systemName:"exclamationmark.square.fill")
         }
     }
     
@@ -33,9 +36,12 @@ class ImageCollectionViewCell: UICollectionViewCell {
         didSet {
             if self.isSelected {
                 self.imageView.alpha = 0.5
+                self.backgroundColor = .systemBlue
+                
             }
             else {
                 self.imageView.alpha = 1
+                self.backgroundColor = self.originalBackgroundColor
             }
         }
     }

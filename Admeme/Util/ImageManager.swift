@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
+// Manages image files within the documents folder
 class ImageManager {
     
+    // Save an image with a given name
     static func saveImage(imageName: String, image: UIImage) -> URL?{
-
-
+        
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil}
 
         var fileName = imageName
@@ -25,6 +26,7 @@ class ImageManager {
             fileURL = documentsDirectory.appendingPathComponent(fileName)
         }
 
+        // reduces image quality to improve performance
         guard let data = image.jpegData(compressionQuality: 0.0) else { return nil}
 
         do {
@@ -37,6 +39,7 @@ class ImageManager {
         return nil
     }
     
+    // saves an image with a random generated name
     static func saveImage(image: UIImage) -> URL? {
         
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil}
@@ -62,6 +65,7 @@ class ImageManager {
     }
 
     
+    // Loads an image from documents with the specified name
     static func loadImageFromDiskWith(fileName: String) -> UIImage? {
         let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
@@ -77,11 +81,13 @@ class ImageManager {
         return nil
     }
     
+    // removes an image with a given URL
     static func removeImage(fileURL: URL) {
         self.removeImage(filePath: fileURL.path)
         
     }
     
+    // removes an image with a given filepath
     static func removeImage(filePath: String) {
         if FileManager.default.fileExists(atPath: filePath) {
             do {
@@ -94,7 +100,8 @@ class ImageManager {
     }
     
     
-    static func getAllFilesUrls() -> [URL] {
+    // returns an array with all file URLs inside documents
+    static func getAllFileUrls() -> [URL] {
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         do {
@@ -104,9 +111,19 @@ class ImageManager {
             print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
             return []
         }
-
     }
     
+    // returns an array with all filepaths inside documents
+    static func getAllFilepaths() -> [String] {
+        let urls = getAllFileUrls()
+        var filepaths:[String] = []
+        for url in urls {
+            filepaths.append(url.path)
+        }
+        return filepaths
+    }
+    
+    // loads an image with a given URL
     static func loadImageFromDiskWith(imageUrl: URL) -> UIImage? {
             return UIImage(contentsOfFile: imageUrl.path)
     }

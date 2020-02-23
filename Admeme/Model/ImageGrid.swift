@@ -8,11 +8,18 @@
 
 import UIKit
 
+// Defines format and basic behaviour 
+
 class ImageGrid: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let reuseIdentifier = "ImageCell"
 
     let cellsByRow: CGFloat = 3
+
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
 
     
     override func viewWillAppear(_ animated: Bool) {
