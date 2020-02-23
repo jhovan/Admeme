@@ -22,7 +22,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let favorites =  UserDefaults.standard.stringArray(forKey: Constants.FAVORITES_KEY) {
             self.favorites = favorites
         }
@@ -32,6 +31,12 @@ class DetailViewController: UIViewController {
             starButton.setImage(UIImage(systemName:"star.fill"), for: .normal)
         }
         self.imageView.image = UIImage(contentsOfFile: self.filePath!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if self.imageView.image == nil {
+            removeCompletely()
+        }
     }
     
     
@@ -58,6 +63,14 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func removeButton(_ sender: Any) {
+        removeCompletely()
+    }
+    
+    @IBAction func closeButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func removeCompletely() {
         ImageManager.removeImage(filePath: self.filePath!)
         self.imageGridView?.cellItems.remove(at: cellIndex!)
         if ((self.favorites?.contains(self.fileName!))!) {
@@ -66,11 +79,5 @@ class DetailViewController: UIViewController {
         }
         dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func closeButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-
 
 }

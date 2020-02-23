@@ -19,11 +19,12 @@ class CategoriesCollectionViewController: ImageGrid {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.groups = Classifier.getGroups()
+        asynchronousRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isToolbarHidden = true
+        asynchronousRefreshing()
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -40,10 +41,23 @@ class CategoriesCollectionViewController: ImageGrid {
        }
     }
 
-    @IBAction func updateButton(_ sender: Any) {
-        self.groups = Classifier.getGroups()
-        self.collectionView.reloadData()
-    }
     
 
+    func asynchronousRefreshing() {
+        let indicator = UIActivityIndicatorView(style: .white)
+        indicator.hidesWhenStopped = true
+        indicator.startAnimating()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: indicator)
+        let dataOperation = BlockOperation {
+            self.groups = Classifier.getGroups()
+        }
+        let UIOperation = BlockOperation {
+            self.collectionView.reloadData()
+            indicator.stopAnimating()
+        }
+        UIOperation.addDependency(dataOperation)
+        let queue = OperationQueue()
+        queue.addOperation (dataOperation)
+        OperationQueue.main.addOperation(UIOperation)
+    }
 }
