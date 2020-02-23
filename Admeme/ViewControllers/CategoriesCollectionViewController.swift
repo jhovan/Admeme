@@ -44,20 +44,42 @@ class CategoriesCollectionViewController: ImageGrid {
     
 
     func asynchronousRefreshing() {
-        let indicator = UIActivityIndicatorView(style: .white)
-        indicator.hidesWhenStopped = true
-        indicator.startAnimating()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: indicator)
-        let dataOperation = BlockOperation {
-            self.groups = Classifier.getGroups()
+        
+        // If a file was removed, it is removed manually from the groups
+        let filepaths = ImageManager.getAllFilepaths()
+        for i in stride(from: 0, through: self.groups.count - 1, by: 1) {
+            for path in self.groups[i] {
+                if !filepaths.contains(path) {
+                    self.groups[i].removeAll(where: {$0 == path})
+                }
+            }
         }
-        let UIOperation = BlockOperation {
-            self.collectionView.reloadData()
-            indicator.stopAnimating()
+        self.groups.removeAll(where:{$0.isEmpty})
+        self.collectionView.reloadData()
+        
+        var pathsFromGroups:[String] = []
+        for group in self.groups {
+            pathsFromGroups += group
         }
-        UIOperation.addDependency(dataOperation)
-        let queue = OperationQueue()
-        queue.addOperation (dataOperation)
-        OperationQueue.main.addOperation(UIOperation)
+        
+        // If there are more files in documents than in the groups
+        // the groups have to be created again
+        if filepaths.count > pathsFromGroups.count {
+            let indicator = UIActivityIndicatorView(style: .medium)
+            indicator.hidesWhenStopped = true
+            indicator.startAnimating()
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: indicator)
+            let dataOperation = BlockOperation {
+                self.groups = Classifier.getGroups()
+            }
+            let UIOperation = BlockOperation {
+                self.collectionView.reloadData()
+                indicator.stopAnimating()
+            }
+            UIOperation.addDependency(dataOperation)
+            let queue = OperationQueue()
+            queue.addOperation (dataOperation)
+            OperationQueue.main.addOperation(UIOperation)
+        }
     }
 }
