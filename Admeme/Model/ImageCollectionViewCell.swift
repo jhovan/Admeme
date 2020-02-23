@@ -26,7 +26,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     func configure(_ filePath: String?) {
         if let filePath = filePath {
             self.originalBackgroundColor = self.backgroundColor
-            self.imageView.image = UIImage(contentsOfFile: filePath) ?? UIImage(systemName:"trash.circle")
+            self.imageView.image = UIImage(contentsOfFile: filePath) ?? UIImage(systemName:"exclamationmark.square.fill")
         }
     }
     
