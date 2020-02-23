@@ -209,10 +209,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3u-58-8dA">
-                                <rect key="frame" x="8" y="8" width="28" height="28"/>
+                                <rect key="frame" x="8" y="10" width="26" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="AsQ-Ev-iPP"/>
-                                    <constraint firstAttribute="width" constant="28" id="ghI-CI-cp8"/>
+                                    <constraint firstAttribute="height" constant="26" id="AsQ-Ev-iPP"/>
+                                    <constraint firstAttribute="width" constant="26" id="ghI-CI-cp8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" image="xmark" catalog="system">
@@ -234,7 +234,7 @@
                             <constraint firstItem="Wvq-fd-p8a" firstAttribute="leading" secondItem="nlF-q0-TYL" secondAttribute="leading" id="Jvu-mX-VCd"/>
                             <constraint firstItem="Cnv-eF-mxS" firstAttribute="centerX" secondItem="nlF-q0-TYL" secondAttribute="centerX" id="T9d-4y-ThT"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="trailing" secondItem="Wvq-fd-p8a" secondAttribute="trailing" id="evH-oW-4rM"/>
-                            <constraint firstItem="B3u-58-8dA" firstAttribute="top" secondItem="nlF-q0-TYL" secondAttribute="top" constant="8" id="fzK-wC-Q7a"/>
+                            <constraint firstItem="B3u-58-8dA" firstAttribute="top" secondItem="nlF-q0-TYL" secondAttribute="top" constant="10" id="fzK-wC-Q7a"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="bottom" secondItem="Cnv-eF-mxS" secondAttribute="bottom" constant="20" id="gxF-L3-Uin"/>
                             <constraint firstItem="nlF-q0-TYL" firstAttribute="bottom" secondItem="Der-pP-hga" secondAttribute="bottom" constant="20" id="lb6-4C-gbl"/>
                         </constraints>
