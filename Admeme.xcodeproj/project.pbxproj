@@ -33,7 +33,6 @@
 		0E50369C24030D420007F153 /* ClassifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E50369B24030D420007F153 /* ClassifierTests.swift */; };
 		0E83DC7024030F9F00B03613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E83DC6F24030F9F00B03613 /* Assets.xcassets */; };
 		0E9BDCA223FED58D009AF5C2 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9BDCA123FED58D009AF5C2 /* CategoryCollectionViewController.swift */; };
-		0EE709142403144E007A402B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E83DC6F24030F9F00B03613 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -388,7 +387,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EE709142403144E007A402B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
