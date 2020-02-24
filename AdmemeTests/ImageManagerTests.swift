@@ -21,7 +21,7 @@ class ImageManagerTests: XCTestCase {
     }
 
     override func tearDown() {
-        ImageManager.removeImage(fileURL: self.url!)
+        ImageManager.removeAllFiles()
     }
 
     func testSaveImageWithoutName() {

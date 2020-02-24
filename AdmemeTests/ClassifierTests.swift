@@ -16,6 +16,10 @@ class ClassifierTests: XCTestCase {
     override func setUp() {
         ImageManager.removeAllFiles()
     }
+    
+    override func tearDown() {
+        ImageManager.removeAllFiles()
+    }
 
     func testGroupsWithoutFiles() {
         let groups = Classifier.generateGroups()
