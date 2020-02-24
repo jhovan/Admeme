@@ -53,8 +53,7 @@ class VerTodoCollectionViewController: ImageGridWithDetail, UIImagePickerControl
         
         
         // Saves the image to Documents
-        var url: URL?
-        url = ImageManager.saveImage(image: image)
+        _ = ImageManager.saveImage(image: image)
                     
         // Removes the image from Photos in case there is authorization
         let status = PHPhotoLibrary.authorizationStatus()
@@ -69,13 +68,6 @@ class VerTodoCollectionViewController: ImageGridWithDetail, UIImagePickerControl
                 print(success ? "Success removing from Photos" :  "Error removing from Photos" )
             })
         }
-
-        
-        if let url = url {
-            self.cellItems.append(url.path)
-        }
-        
-        self.collectionView.reloadData()
 
         picker.dismiss(animated: true, completion: nil)
     }
