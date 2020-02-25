@@ -10,6 +10,7 @@ import Foundation
 
 class Constants {
     static let FAVORITES_KEY: String = "favorites"
+    static let GROUPS_KEY: String = "grupos"
     static let GROUP: String = "group.admeme"
     static let SHARE_KEY: String = "ShareKey"
     static let MAX_DISTANCE: Float = 16.0

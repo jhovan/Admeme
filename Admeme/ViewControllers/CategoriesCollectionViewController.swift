@@ -20,7 +20,10 @@ class CategoriesCollectionViewController: ImageGrid {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        asynchronousRefreshing()
+        // retrieves groups in case there are on UserDefaults
+        if let groups =  UserDefaults.standard.array(forKey: Constants.GROUPS_KEY) {
+            self.groups = groups as! [[String]]
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +51,7 @@ class CategoriesCollectionViewController: ImageGrid {
     // Refreshes groups data asynchronously if necessary
     func asynchronousRefreshing() {
         
-        // If a file was removed, it is removed manually from the groups
+        // If a file was removed, it is removed from the groups
         let filepaths = ImageManager.getAllFilepaths()
         for i in stride(from: 0, through: self.groups.count - 1, by: 1) {
             for path in self.groups[i] {
@@ -66,7 +69,7 @@ class CategoriesCollectionViewController: ImageGrid {
         }
         
         // If there are more files in documents than in the groups
-        // the groups have to be created again
+        // then groups have to be created again
         if filepaths.count > pathsFromGroups.count {
             let indicator = UIActivityIndicatorView(style: .medium)
             indicator.hidesWhenStopped = true
@@ -78,6 +81,8 @@ class CategoriesCollectionViewController: ImageGrid {
             let UIOperation = BlockOperation {
                 self.collectionView.reloadData()
                 indicator.stopAnimating()
+                // saves groups to UserDefaults
+                UserDefaults.standard.set(self.groups, forKey: Constants.GROUPS_KEY)
             }
             UIOperation.addDependency(dataOperation)
             let queue = OperationQueue()
