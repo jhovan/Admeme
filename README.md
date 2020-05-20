@@ -1,8 +1,7 @@
 # Admeme
 
-José Jhovan Gallardo Valdez
+Jhovan Gallardo
 
-
-La documentación se encuentra en:
+Documentation available on the link below:
 
 https://www.dropbox.com/sh/5td2fveb2udyvva/AADT3qldHodbmD3kkZPIAtVja?dl=0
